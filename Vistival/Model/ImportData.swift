@@ -8,15 +8,19 @@
 
 import Foundation
 
-class ImportData{
+public class ImportData{
     
     var faqList:[FAQ] = [FAQ]();
     var newsList:[NewsFeed] = [NewsFeed]();
     var artistList:[Artist] = [Artist]();
     var stageList:[Stage] = [Stage]();
     var foodCourt:[FoodStand] = [FoodStand]();
-
+    
     static let data:ImportData = ImportData();
+    
+    init() {
+        
+    }
     
     func fillAllData(){
         self.makeFAQ();
@@ -132,3 +136,4 @@ class ImportData{
         
     }
 }
+

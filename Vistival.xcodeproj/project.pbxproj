@@ -19,6 +19,8 @@
 		9EC66F28201F2DBE0053A03B /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F27201F2DBE0053A03B /* Artist.swift */; };
 		9EC66F2C201F2DF80053A03B /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F2B201F2DF80053A03B /* Stage.swift */; };
 		9EC66F34201F33630053A03B /* FoodStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F33201F33630053A03B /* FoodStand.swift */; };
+		9EC66F38201F51CD0053A03B /* Jos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F37201F51CD0053A03B /* Jos.swift */; };
+		9EC66F3A201F541E0053A03B /* ImportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F39201F541E0053A03B /* ImportData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,9 @@
 		9EC66F25201F2DB20053A03B /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		9EC66F27201F2DBE0053A03B /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		9EC66F2B201F2DF80053A03B /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
-		9EC66F31201F32030053A03B /* ImportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportData.swift; sourceTree = "<group>"; };
 		9EC66F33201F33630053A03B /* FoodStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStand.swift; sourceTree = "<group>"; };
+		9EC66F37201F51CD0053A03B /* Jos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jos.swift; sourceTree = "<group>"; };
+		9EC66F39201F541E0053A03B /* ImportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +91,8 @@
 				9EC66F27201F2DBE0053A03B /* Artist.swift */,
 				9EC66F2B201F2DF80053A03B /* Stage.swift */,
 				9EC66F33201F33630053A03B /* FoodStand.swift */,
-				9EC66F31201F32030053A03B /* ImportData.swift */,
+				9EC66F37201F51CD0053A03B /* Jos.swift */,
+				9EC66F39201F541E0053A03B /* ImportData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +191,8 @@
 				9EC66F22201F2CAD0053A03B /* FAQ.swift in Sources */,
 				9EC66F2C201F2DF80053A03B /* Stage.swift in Sources */,
 				9EC66F0B201F29E40053A03B /* ViewController.swift in Sources */,
+				9EC66F38201F51CD0053A03B /* Jos.swift in Sources */,
+				9EC66F3A201F541E0053A03B /* ImportData.swift in Sources */,
 				9EC66F34201F33630053A03B /* FoodStand.swift in Sources */,
 				9EC66F11201F29E40053A03B /* Vistival.xcdatamodeld in Sources */,
 				9EC66F26201F2DB20053A03B /* NewsFeed.swift in Sources */,
