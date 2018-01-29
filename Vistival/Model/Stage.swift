@@ -7,8 +7,17 @@
 //
 
 import Foundation
-import MapKit;
+import MapKit
 
-public class Stage:Location {
+public class Stage: NSObject, MKAnnotation {
     
+    public var coordinate: CLLocationCoordinate2D;
+    var id:Int;
+    var name:String;
+    
+    init(coordinate:CLLocationCoordinate2D, name:String, id:Int) {
+        self.coordinate = coordinate;
+        self.name = name;
+        self.id = id;
+    }
 }

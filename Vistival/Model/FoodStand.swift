@@ -9,12 +9,17 @@
 import Foundation
 import MapKit
 
-public class FoodStand:Location{
+public class FoodStand: NSObject, MKAnnotation {
     
-    var description:String;
+    public var coordinate: CLLocationCoordinate2D;
+    var id:Int;
+    var name:String;
+    var descriptionFood: String;
     
-    init(coordinate: CLLocation, name: String, id: Int, description:String) {
-        self.description = description;
-        super.init(coordinate: coordinate, name: name, id: id)
+    init(coordinate:CLLocationCoordinate2D, name:String, id:Int, descriptionFood:String) {
+        self.coordinate = coordinate;
+        self.name = name;
+        self.id = id;
+        self.descriptionFood = descriptionFood;
     }
 }
