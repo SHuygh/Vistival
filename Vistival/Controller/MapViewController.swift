@@ -83,6 +83,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func makePinsStage(){
         
         for stage:Stage in stages {
+            
             self.mapView.addAnnotation(stage)
         }
 
@@ -91,6 +92,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func makePinsFoodCourt(){
         
         for foodstand:FoodStand in foodstands {
+            
             self.mapView.addAnnotation(foodstand)
         }
         
