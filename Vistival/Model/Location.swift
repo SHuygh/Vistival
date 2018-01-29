@@ -9,13 +9,13 @@
 import Foundation
 import MapKit
 
-public class Location {
+public class Location:NSObject, MKAnnotation {
     
-    var coordinate:CLLocation;
+    public var coordinate: CLLocationCoordinate2D;
     var id:Int;
     var name:String;
     
-    init(coordinate:CLLocation, name:String, id:Int) {
+    init(coordinate:CLLocationCoordinate2D, name:String, id:Int) {
         self.coordinate = coordinate;
         self.name = name;
         self.id = id;
