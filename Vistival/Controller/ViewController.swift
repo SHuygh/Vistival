@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let data =  ImportData.data;
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        //all data is put in the arrays in ImportData
+        data.fillAllData();
     }
 
     override func didReceiveMemoryWarning() {
