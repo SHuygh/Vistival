@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         //all data is put in the arrays in ImportData
-        data.fillAllData();
+       
     }
 
     override func didReceiveMemoryWarning() {

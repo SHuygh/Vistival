@@ -20,7 +20,7 @@ public class ImportData{
     static let data:ImportData = ImportData();
     
     init() {
-        
+        self.fillAllData();
     }
     
     func fillAllData(){
