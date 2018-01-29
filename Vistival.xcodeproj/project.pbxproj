@@ -56,15 +56,39 @@
 		9EC66F07201F29E40053A03B /* Vistival */ = {
 			isa = PBXGroup;
 			children = (
-				9EC66F08201F29E40053A03B /* AppDelegate.swift */,
-				9EC66F0A201F29E40053A03B /* ViewController.swift */,
-				9EC66F0C201F29E40053A03B /* Main.storyboard */,
-				9EC66F12201F29E40053A03B /* Assets.xcassets */,
-				9EC66F14201F29E40053A03B /* LaunchScreen.storyboard */,
 				9EC66F17201F29E40053A03B /* Info.plist */,
-				9EC66F0F201F29E40053A03B /* Vistival.xcdatamodeld */,
+				9EC66F08201F29E40053A03B /* AppDelegate.swift */,
+				9EC66F12201F29E40053A03B /* Assets.xcassets */,
+				9EC66F20201F2BDF0053A03B /* Controller */,
+				9EC66F1F201F2BDA0053A03B /* View */,
+				9EC66F1E201F2BC50053A03B /* Model */,
 			);
 			path = Vistival;
+			sourceTree = "<group>";
+		};
+		9EC66F1E201F2BC50053A03B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EC66F0F201F29E40053A03B /* Vistival.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9EC66F1F201F2BDA0053A03B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EC66F14201F29E40053A03B /* LaunchScreen.storyboard */,
+				9EC66F0C201F29E40053A03B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9EC66F20201F2BDF0053A03B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9EC66F0A201F29E40053A03B /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
