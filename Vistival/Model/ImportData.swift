@@ -146,19 +146,19 @@ public class ImportData{
         let foodstand1 = FoodStand.init(coordinate: coordinateFoodStand1, name: "Shrimps", id: 1, descriptionFood: "Everything shrimp related")
         
         let coordinateFoodStand2 = CLLocationCoordinate2DMake(51.1517238961145, 2.72182552130431)
-        let foodstand2 = FoodStand.init(coordinate: coordinateFoodStand1, name: "Bar", id: 2, descriptionFood: "Softdrinks, beer, wine, ....")
+        let foodstand2 = FoodStand.init(coordinate: coordinateFoodStand2, name: "Bar", id: 2, descriptionFood: "Softdrinks, beer, wine, ....")
         
         let coordinateFoodStand3 = CLLocationCoordinate2DMake(51.151776246496, 2.72195827763361)
-        let foodstand3 = FoodStand.init(coordinate: coordinateFoodStand1, name: "Burgers by John", id: 3, descriptionFood: "Burgers and more")
+        let foodstand3 = FoodStand.init(coordinate: coordinateFoodStand3, name: "Burgers by John", id: 3, descriptionFood: "Burgers and more")
         
         let coordinateFoodStand4 = CLLocationCoordinate2DMake(51.1518474374522, 2.72213969486354)
-        let foodstand4 = FoodStand.init(coordinate: coordinateFoodStand1, name: "De Nieuwe poort", id: 4, descriptionFood: "Specialiteiten uit Nieuwpoort")
+        let foodstand4 = FoodStand.init(coordinate: coordinateFoodStand4, name: "De Nieuwe poort", id: 4, descriptionFood: "Specialiteiten uit Nieuwpoort")
         
         let coordinateFoodStand5 = CLLocationCoordinate2DMake(51.1522295910231, 2.72184805522625)
-        let foodstand5 = FoodStand.init(coordinate: coordinateFoodStand1, name: "Bar", id: 5, descriptionFood: "Softdrinks, beer, wine, ....")
+        let foodstand5 = FoodStand.init(coordinate: coordinateFoodStand5, name: "Bar", id: 5, descriptionFood: "Softdrinks, beer, wine, ....")
         
         let coordinateFoodStand6 = CLLocationCoordinate2DMake(51.1523202756963, 2.72207071577353)
-        let foodstand6 = FoodStand.init(coordinate: coordinateFoodStand1, name: "Cocktails", id: 6, descriptionFood: "Shrimp cocktails")
+        let foodstand6 = FoodStand.init(coordinate: coordinateFoodStand6, name: "Cocktails", id: 6, descriptionFood: "Shrimp cocktails")
         
         foodCourt.append(foodstand1)
         foodCourt.append(foodstand2)

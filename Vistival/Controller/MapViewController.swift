@@ -13,6 +13,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var mapView: MKMapView!
     
+    let stages = ImportData.data.stageList;
+    let foodstands = ImportData.data.foodCourt;
+    
     var locationManager = CLLocationManager();
     
     override func viewDidLoad() {
@@ -79,9 +82,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func makePinsStage(){
         
+        for stage:Stage in stages {
+            self.mapView.addAnnotation(stage)
+        }
+
     }
     
     func makePinsFoodCourt(){
+        
+        for foodstand:FoodStand in foodstands {
+            self.mapView.addAnnotation(foodstand)
+        }
         
     }
     
