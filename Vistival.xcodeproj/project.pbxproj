@@ -14,6 +14,13 @@
 		9EC66F11201F29E40053A03B /* Vistival.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F0F201F29E40053A03B /* Vistival.xcdatamodeld */; };
 		9EC66F13201F29E40053A03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC66F12201F29E40053A03B /* Assets.xcassets */; };
 		9EC66F16201F29E40053A03B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC66F14201F29E40053A03B /* LaunchScreen.storyboard */; };
+		9EC66F22201F2CAD0053A03B /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F21201F2CAD0053A03B /* FAQ.swift */; };
+		9EC66F26201F2DB20053A03B /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F25201F2DB20053A03B /* NewsFeed.swift */; };
+		9EC66F28201F2DBE0053A03B /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F27201F2DBE0053A03B /* Artist.swift */; };
+		9EC66F2A201F2DDF0053A03B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F29201F2DDF0053A03B /* Location.swift */; };
+		9EC66F2C201F2DF80053A03B /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F2B201F2DF80053A03B /* Stage.swift */; };
+		9EC66F32201F32030053A03B /* ImportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F31201F32030053A03B /* ImportData.swift */; };
+		9EC66F34201F33630053A03B /* FoodStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F33201F33630053A03B /* FoodStand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		9EC66F12201F29E40053A03B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC66F15201F29E40053A03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EC66F17201F29E40053A03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EC66F21201F2CAD0053A03B /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		9EC66F25201F2DB20053A03B /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
+		9EC66F27201F2DBE0053A03B /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		9EC66F29201F2DDF0053A03B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9EC66F2B201F2DF80053A03B /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
+		9EC66F31201F32030053A03B /* ImportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportData.swift; sourceTree = "<group>"; };
+		9EC66F33201F33630053A03B /* FoodStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				9EC66F0F201F29E40053A03B /* Vistival.xcdatamodeld */,
+				9EC66F21201F2CAD0053A03B /* FAQ.swift */,
+				9EC66F25201F2DB20053A03B /* NewsFeed.swift */,
+				9EC66F27201F2DBE0053A03B /* Artist.swift */,
+				9EC66F29201F2DDF0053A03B /* Location.swift */,
+				9EC66F2B201F2DF80053A03B /* Stage.swift */,
+				9EC66F33201F33630053A03B /* FoodStand.swift */,
+				9EC66F31201F32030053A03B /* ImportData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,8 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC66F28201F2DBE0053A03B /* Artist.swift in Sources */,
+				9EC66F22201F2CAD0053A03B /* FAQ.swift in Sources */,
+				9EC66F2C201F2DF80053A03B /* Stage.swift in Sources */,
 				9EC66F0B201F29E40053A03B /* ViewController.swift in Sources */,
+				9EC66F34201F33630053A03B /* FoodStand.swift in Sources */,
 				9EC66F11201F29E40053A03B /* Vistival.xcdatamodeld in Sources */,
+				9EC66F26201F2DB20053A03B /* NewsFeed.swift in Sources */,
 				9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */,
 				5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */,
 			);
