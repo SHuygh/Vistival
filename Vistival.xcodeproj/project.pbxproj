@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E594BEE201F585200335955 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BED201F585200335955 /* InfoViewController.swift */; };
 		5E594BF0201F651300335955 /* DetailFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BEF201F651300335955 /* DetailFAQViewController.swift */; };
+		5E594BF2201F722100335955 /* LineUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF1201F722100335955 /* LineUpViewController.swift */; };
 		5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA872C3201F490D0046F5DA /* MapViewController.swift */; };
 		9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F08201F29E40053A03B /* AppDelegate.swift */; };
 		9EC66F0B201F29E40053A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F0A201F29E40053A03B /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		5E594BED201F585200335955 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		5E594BEF201F651300335955 /* DetailFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFAQViewController.swift; sourceTree = "<group>"; };
+		5E594BF1201F722100335955 /* LineUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpViewController.swift; sourceTree = "<group>"; };
 		5EA872C3201F490D0046F5DA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9EC66F05201F29E40053A03B /* Vistival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vistival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC66F08201F29E40053A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				5EA872C3201F490D0046F5DA /* MapViewController.swift */,
 				5E594BED201F585200335955 /* InfoViewController.swift */,
 				5E594BEF201F651300335955 /* DetailFAQViewController.swift */,
+				5E594BF1201F722100335955 /* LineUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				9EC66F38201F51CD0053A03B /* Jos.swift in Sources */,
 				9EC66F3A201F541E0053A03B /* ImportData.swift in Sources */,
 				9EC66F34201F33630053A03B /* FoodStand.swift in Sources */,
+				5E594BF2201F722100335955 /* LineUpViewController.swift in Sources */,
 				9EC66F11201F29E40053A03B /* Vistival.xcdatamodeld in Sources */,
 				9EC66F26201F2DB20053A03B /* NewsFeed.swift in Sources */,
 				9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */,

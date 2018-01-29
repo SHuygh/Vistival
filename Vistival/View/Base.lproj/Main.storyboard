@@ -59,18 +59,63 @@
         <!--Line-up-->
         <scene sceneID="PDg-dk-Oij">
             <objects>
-                <viewController title="Line-up" id="cJ7-nd-Oh5" sceneMemberID="viewController">
+                <viewController title="Line-up" id="cJ7-nd-Oh5" customClass="LineUpViewController" customModule="Vistival" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mBV-3e-5yu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eM1-gc-fBi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="CLy-Dn-7m9" detailTextLabel="AIF-DK-1ni" style="IBUITableViewCellStyleSubtitle" id="hlx-x9-bdT">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlx-x9-bdT" id="8di-FT-8KC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CLy-Dn-7m9">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AIF-DK-1ni">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cJ7-nd-Oh5" id="TO9-y6-GKT"/>
+                                    <outlet property="delegate" destination="cJ7-nd-Oh5" id="o6H-sY-V7r"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="top" secondItem="mBV-3e-5yu" secondAttribute="top" id="Abx-jY-T9B"/>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="leading" secondItem="7aS-IC-QFm" secondAttribute="leading" id="DMb-64-GjG"/>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="bottom" secondItem="7aS-IC-QFm" secondAttribute="bottom" id="JUr-dR-XWX"/>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="trailing" secondItem="7aS-IC-QFm" secondAttribute="trailing" id="hhC-Yu-mOe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7aS-IC-QFm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Line-up" id="fhf-Pu-g2m"/>
+                    <connections>
+                        <outlet property="artistview" destination="eM1-gc-fBi" id="6TK-XX-2UQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgY-GM-0j6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="540"/>
+            <point key="canvasLocation" x="677.60000000000002" y="539.28035982008998"/>
         </scene>
         <!--Info-->
         <scene sceneID="UCe-Iq-E3M">
