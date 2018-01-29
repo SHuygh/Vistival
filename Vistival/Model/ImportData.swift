@@ -19,7 +19,7 @@ public class ImportData{
     static let data:ImportData = ImportData();
     
     init() {
-        
+        fillAllData()
     }
     
     func fillAllData(){
