@@ -29,7 +29,7 @@
         <!--Map-->
         <scene sceneID="xlb-X7-zED">
             <objects>
-                <viewController title="Map" id="aY8-AR-eLw" sceneMemberID="viewController">
+                <viewController title="Map" id="aY8-AR-eLw" customClass="MapViewController" customModule="Vistival" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4d-do-nyo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,9 @@
                         <viewLayoutGuide key="safeArea" id="U1o-nU-hd8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="ThP-aw-DdD"/>
+                    <connections>
+                        <outlet property="mapView" destination="HaU-t4-KM1" id="QPI-9C-EI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tL-bO-Gv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,6 +94,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="q4Y-uV-yzn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yec-uG-61T">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
