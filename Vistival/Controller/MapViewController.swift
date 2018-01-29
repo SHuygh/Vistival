@@ -9,27 +9,82 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var locationManager = CLLocationManager();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // coordinaten van het festival via klassen
+        locationManager.delegate = self
+        self.initializeMap();
         
-        let center = CLLocationCoordinate2D(latitude: 30, longitude: 30)
-        let span = MKCoordinateSpanMake(2, 2)
-        let region = MKCoordinateRegion(center: center, span: span)
-        
-        mapView.region = region
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+    
+    func initializeMap(){
+        //generate region to be shown
+        self.setLocation();
+        
+        //check if userlocation is enabled and show user location accordignly
+        self.checkPermissionLocation();
+        
+        //Place pins for stages
+        self.makePinsStage();
+        
+        //place pins for foodstands
+        self.makePinsFoodCourt();
+        
+    }
+    
+    func setLocation(){
+        // coordinaten van het festival
+        
+        let center = CLLocationCoordinate2D(latitude: 51.152256, longitude: 2.722487)
+        let span = MKCoordinateSpanMake(0.0015, 0.0015)
+        let region = MKCoordinateRegion(center: center, span: span)
+        
+        mapView.region = region
+        
+        //set orientation in the right direction (53° relative to north)
+        mapView.camera.heading = 53;
+        mapView.setCamera(mapView.camera, animated: false);
+        
+        //no interaction enabled;
+        mapView.isUserInteractionEnabled = false;
+
+    }
+    
+    func checkPermissionLocation(){
+    
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways ){
+            
+            mapView.showsUserLocation = true;
+            
+        }else{
+            locationManager.requestWhenInUseAuthorization();
+        }
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+         mapView.showsUserLocation  = (status == .authorizedWhenInUse || status == .authorizedAlways )
+    }
+    
+    func makePinsStage(){
+        
+    }
+    
+    func makePinsFoodCourt(){
+        
+    }
+    
     /*
     // MARK: - Navigation
 
