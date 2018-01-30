@@ -193,9 +193,6 @@
                                                     <rect key="frame" x="15" y="0.0" width="65" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <gestureRecognizers/>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="262-1j-L0S" appends="YES" id="dUm-NQ-Ac8"/>
-                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -265,11 +262,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgY-GM-0j6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="262-1j-L0S">
-                    <connections>
-                        <action selector="imageOfCellTapped:" destination="cJ7-nd-Oh5" id="ylj-fj-QEx"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="677.60000000000002" y="539.28035982008998"/>
         </scene>
