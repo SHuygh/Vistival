@@ -18,13 +18,14 @@ class NewsItemsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        lblDetailTxt.text = currentItem?.title
+        lblDetailTxt.text = currentItem?.body
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        lblDetailTxt.text = currentItem?.title
-        lblDetailTxt.text = currentItem?.body
+        
     }
     
     @IBAction func dismiss() {

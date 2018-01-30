@@ -41,6 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         let currentItem:NewsFeed = newsItems[indexPath.row]
         cell?.textLabel?.text = newsItems[indexPath.row].title
+        cell?.imageView?.image = UIImage.init(named: newsItems[indexPath.row].img)
         return cell!
     }
     
