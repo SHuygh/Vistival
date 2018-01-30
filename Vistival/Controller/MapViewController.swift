@@ -13,6 +13,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var mapView: MKMapView!
     
+    
     let stages = ImportData.data.stageList;
     let foodstands = ImportData.data.foodCourt;
     
@@ -20,8 +21,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         locationManager.delegate = self
+        mapView.delegate = self;
+        
+
         self.initializeMap();
+        
         
     }
 
@@ -60,7 +66,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.setCamera(mapView.camera, animated: false);
         
         //no interaction enabled;
-        mapView.isUserInteractionEnabled = false;
+        mapView.isRotateEnabled = false;
+        mapView.isScrollEnabled = false;
+        mapView.isZoomEnabled = false;
 
     }
     
@@ -98,14 +106,68 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    /*
-    // MARK: - Navigation
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        
+        if let stagePin = annotation as? Stage{
+            
+            let identifier:String = "Stage";
+            
+            
+            if let reuasableView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier){
+                reuasableView.annotation = stagePin;
+                return reuasableView;
+            }else{
+                
+                let view = MKPinAnnotationView(annotation: stagePin, reuseIdentifier: identifier);
+                
+                let timetableButton = UIButton.init(type: .detailDisclosure);
+                
+                timetableButton.accessibilityIdentifier = stagePin.title;
+                timetableButton.addTarget(self, action: #selector(goToTimetable(sender:)), for: .touchUpInside)
+                
+                view.rightCalloutAccessoryView =  timetableButton;
+                
+                view.pinTintColor = UIColor.blue;
+                view.canShowCallout = true;
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+                return view;
+            }
+        }
+        else if let foodStandPin = annotation as? FoodStand
+        {
+            let identifier:String = "Foodstand";
+            
+            
+            if let reuasableView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier){
+                reuasableView.annotation = foodStandPin;
+                return reuasableView;
+                
+            }else{
+                
+                let view = MKPinAnnotationView(annotation: foodStandPin, reuseIdentifier: identifier);
+                
+                view.pinTintColor = UIColor.red;
+                view.canShowCallout = true;
+                
+                return view;
+            
+            }
+        }
+            
+        return nil;
     }
-    */
+
+    
+    @objc func goToTimetable(sender: UIButton){
+
+        tabBarController?.selectedIndex = 1
+        let lineUpVC = tabBarController?.childViewControllers[1] as! LineUpViewController;
+        
+        
+        lineUpVC.testOrigin = sender.accessibilityIdentifier!;
+        
+    }
+    
 
 }

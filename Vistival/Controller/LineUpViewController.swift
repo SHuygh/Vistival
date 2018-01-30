@@ -11,13 +11,15 @@ import UIKit
 class LineUpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
     var lineup = ImportData.data.artistList
+    var testOrigin = "";
     
     @IBOutlet weak var artistview: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad();
         // Do any additional setup after loading the view.
+    
+        lineup.sort(by: { $0.time < $1.time })
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,17 +27,39 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        artistview.reloadData();
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ImportData.data.stageList.count;
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lineup.count
+        return lineup.filter({$0.stageID == section }).count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        
+        return ImportData.data.stageList[section].title;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier:"cell")!
+        
         let selected:Artist = lineup[indexPath.row]
         
-        cell?.textLabel?.text = lineup[indexPath.row].name
-        return cell!
+        let formatter:DateFormatter = DateFormatter.init();
+        formatter.dateStyle = .short;
+        formatter.timeStyle = .short;
+        let timeSelected = formatter.string(from: selected.time)
+        
+        var stageSelected:String = ImportData.data.stageList[selected.stageID].title!;
+
+        cell.textLabel?.text = "\(selected.name) \(testOrigin)"
+        cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
+        return cell
     }
     
     
