@@ -60,17 +60,25 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         let showStageBtn = UIButton.init(frame: CGRect.init(x: frame.size.width - 70, y: 0, width: 60, height: 50))
         
-        showStageBtn.setTitle("...", for: .normal);
-        showStageBtn.backgroundColor = UIColor.red;
-        showStageBtn.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside);
+            showStageBtn.setTitle("...", for: .normal);
+            showStageBtn.backgroundColor = UIColor.red;
+            showStageBtn.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside);
         
+            showStageBtn.accessibilityLabel = "\(section)"
         
-        showStageBtn.accessibilityLabel = "\(section)"
+        let lblHeader =  UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 50));
+        
+            lblHeader.center = CGPoint.init(x: frame.size.width/2.0, y: 25)
+            lblHeader.textAlignment = .center;
+            lblHeader.text = ImportData.data.stageList[section].title;
         
         let header = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        header.addSubview(showStageBtn)
         
-        header.isUserInteractionEnabled = true;
+            header.addSubview(showStageBtn)
+            header.addSubview(lblHeader)
+        
+            header.isUserInteractionEnabled = true;
+        
         return header;
 
         
@@ -166,17 +174,6 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
 
     }
-    
-    
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        let destination:DetailFAQViewController = segue.destination as! DetailFAQViewController
-
-    
     
 
 }
