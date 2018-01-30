@@ -15,6 +15,7 @@ public class Artist{
     var time:Date;
     var image:String
     var duration: Int;
+    var personal:Bool;
     
     init(name:String, stageID:Int, time:Date, image:String, duration:Int) {
         self.name = name;
@@ -22,6 +23,7 @@ public class Artist{
         self.time = time;
         self.image = image;
         self.duration = duration
+        self.personal = false;
     }
     
     
