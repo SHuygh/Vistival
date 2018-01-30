@@ -17,6 +17,10 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var artistview: UITableView!
     
+    @IBOutlet weak var btnZaterdag: UIButton!
+    
+    @IBOutlet weak var btnZondag: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         // Do any additional setup after loading the view.

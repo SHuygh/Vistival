@@ -37,6 +37,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sCA-i8-JzQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -167,7 +168,7 @@
                                 <rect key="frame" x="0.0" y="101" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="CLy-Dn-7m9" detailTextLabel="AIF-DK-1ni" style="IBUITableViewCellStyleSubtitle" id="hlx-x9-bdT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="CLy-Dn-7m9" detailTextLabel="AIF-DK-1ni" style="IBUITableViewCellStyleSubtitle" id="hlx-x9-bdT">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlx-x9-bdT" id="8di-FT-8KC">
@@ -191,7 +192,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerSection" textLabel="Nrk-mF-jEM" style="IBUITableViewCellStyleDefault" id="POj-Wt-Hwh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerSection" textLabel="Nrk-mF-jEM" style="IBUITableViewCellStyleDefault" id="POj-Wt-Hwh">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="POj-Wt-Hwh" id="J0W-rS-BR4">
@@ -251,6 +252,8 @@
                     <tabBarItem key="tabBarItem" title="" image="icons8-guitar-50 (1)" landscapeImage="icons8-guitar-50 (1)" largeContentSizeImage="icons8-guitar-50 (1)" id="fhf-Pu-g2m"/>
                     <connections>
                         <outlet property="artistview" destination="eM1-gc-fBi" id="6TK-XX-2UQ"/>
+                        <outlet property="btnZaterdag" destination="GqL-E6-tBR" id="Dfh-gZ-1bm"/>
+                        <outlet property="btnZondag" destination="5tf-b8-YFi" id="McM-D8-6PS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgY-GM-0j6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -269,7 +272,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Kef-s1-yTh" style="IBUITableViewCellStyleDefault" id="fCk-fY-f4i">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Kef-s1-yTh" style="IBUITableViewCellStyleDefault" id="fCk-fY-f4i">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fCk-fY-f4i" id="8q8-Rt-qfk">
