@@ -119,7 +119,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.imageView?.image = UIImage.init(named: "placeholder.jpg")
         
-        var recognizer = UITapGestureRecognizer.init(target: self, action: #selector())
+        var recognizer = UITapGestureRecognizer.init(target: self, action: #selector(imageOfCellTapped(sender:)))
         
         cell.textLabel?.text = "\(selected.name) \(testOrigin)"
         cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
@@ -127,11 +127,10 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-    
-        func imageOfCellTapped(_ sender: UITapGestureRecognizer) {
-        
+    @objc func imageOfCellTapped(sender: UITapGestureRecognizer){
         
     }
+
     @IBAction func zaterdagPressed() {
         if(showID != 1){
             showID = 1;
