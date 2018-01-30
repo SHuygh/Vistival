@@ -17,14 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XG2-Vp-PAT">
+                                <rect key="frame" x="0.0" y="188" width="375" height="430"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" id="81z-cE-Ggh"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" largeContentSizeImage="news" selectedImage="news" springLoaded="YES" id="81z-cE-Ggh">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="-203"/>
+            <point key="canvasLocation" x="677.60000000000002" y="-203.74812593703149"/>
         </scene>
         <!--Map-->
         <scene sceneID="xlb-X7-zED">
@@ -47,7 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U1o-nU-hd8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="ThP-aw-DdD"/>
+                    <tabBarItem key="tabBarItem" title="Map" selectedImage="map" id="ThP-aw-DdD"/>
                     <connections>
                         <outlet property="mapView" destination="HaU-t4-KM1" id="QPI-9C-EI7"/>
                     </connections>
@@ -108,7 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7aS-IC-QFm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Line-up" id="fhf-Pu-g2m"/>
+                    <tabBarItem key="tabBarItem" title="Line-up" selectedImage="lineup" id="fhf-Pu-g2m"/>
                     <connections>
                         <outlet property="artistview" destination="eM1-gc-fBi" id="6TK-XX-2UQ"/>
                     </connections>
@@ -165,7 +174,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hqQ-RZ-WmG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" id="IvV-e3-3xA"/>
+                    <tabBarItem key="tabBarItem" title="Info" selectedImage="info" id="IvV-e3-3xA"/>
                     <connections>
                         <outlet property="tableview" destination="rdf-Ek-0un" id="W7L-Mf-gZ3"/>
                     </connections>
@@ -238,4 +247,10 @@
             <point key="canvasLocation" x="-163.19999999999999" y="133.13343328335833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info" width="74" height="74"/>
+        <image name="lineup" width="74" height="74"/>
+        <image name="map" width="72" height="72"/>
+        <image name="news" width="79" height="79"/>
+    </resources>
 </document>
