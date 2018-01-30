@@ -14,6 +14,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     var showID = 0;
     var testOrigin = "";
     var showStage:[Bool] = [Bool]()
+    var favorites:[Bool] = [Bool]()
     
     @IBOutlet weak var artistview: UITableView!
     
@@ -117,9 +118,21 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         let stageSelected:String = ImportData.data.stageList[selected.stageID].title!;
         
-        cell.imageView?.image = UIImage.init(named: "placeholder.jpg")
+        if(!favorites[totalRow]){
+            cell.imageView?.image = UIImage.init(named: "placeholder.jpg")
+        }else{
+            cell.imageView?.image = UIImage.init(named: "placeholder1.jpg")
+        }
         
-        var recognizer = UITapGestureRecognizer.init(target: self, action: #selector(imageOfCellTapped(sender:)))
+        
+        //ge maakt ne recognizer
+        //selector called een functie (zie hieronder)
+        let recognizer = UITapGestureRecognizer.init(target: self, action: #selector(imageOfCellTapped(sender:)))
+        
+        //ge voegt die toe
+        cell.imageView?.addGestureRecognizer(recognizer);
+        //ge moogt die aanklikken
+        cell.imageView?.isUserInteractionEnabled = true;
         
         cell.textLabel?.text = "\(selected.name) \(testOrigin)"
         cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
@@ -128,7 +141,27 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @objc func imageOfCellTapped(sender: UITapGestureRecognizer){
-        
+        //ge ziet waar ge tapped
+        let tapLocation = sender.location(in: artistview)
+
+        //haal den index vna die row op
+            if let tapIndexPath = self.artistview.indexPathForRow(at: tapLocation){
+                var totalRow = tapIndexPath.row;
+                
+                totalRowLoop: for artist in lineup {
+                    if(tapIndexPath.section == artist.stageID){
+                        break totalRowLoop
+                    }
+                    totalRow += 1;
+                }
+                favorites[totalRow] = !favorites[totalRow]
+                
+                if(!favorites[totalRow]){
+                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "placeholder.jpg")
+                }else{
+                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "placeholder1.jpg")
+                }
+            }
     }
 
     @IBAction func zaterdagPressed() {
@@ -179,6 +212,12 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
             if(!stage){
                 lineup = lineup.filter({$0.stageID != index })
             }
+        }
+        
+        favorites = [Bool]();
+        
+        for artist in lineup{
+            favorites.append(false);
         }
         
         artistview.reloadData();
