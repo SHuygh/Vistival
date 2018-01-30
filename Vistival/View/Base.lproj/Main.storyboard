@@ -27,8 +27,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="news" largeContentSizeImage="news" selectedImage="news" springLoaded="YES" id="81z-cE-Ggh">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    <tabBarItem key="tabBarItem" title="" image="news" landscapeImage="news" largeContentSizeImage="news" id="81z-cE-Ggh">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -56,7 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U1o-nU-hd8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" selectedImage="map" id="ThP-aw-DdD"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-marker-filled-50" landscapeImage="icons8-marker-filled-50" largeContentSizeImage="icons8-marker-filled-50" id="ThP-aw-DdD"/>
                     <connections>
                         <outlet property="mapView" destination="HaU-t4-KM1" id="QPI-9C-EI7"/>
                     </connections>
@@ -117,7 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7aS-IC-QFm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Line-up" selectedImage="lineup" id="fhf-Pu-g2m"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-guitar-50 (1)" landscapeImage="icons8-guitar-50 (1)" largeContentSizeImage="icons8-guitar-50 (1)" id="fhf-Pu-g2m"/>
                     <connections>
                         <outlet property="artistview" destination="eM1-gc-fBi" id="6TK-XX-2UQ"/>
                     </connections>
@@ -174,7 +174,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hqQ-RZ-WmG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" selectedImage="info" id="IvV-e3-3xA"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-about-50" landscapeImage="icons8-about-50" largeContentSizeImage="icons8-about-50" id="IvV-e3-3xA"/>
                     <connections>
                         <outlet property="tableview" destination="rdf-Ek-0un" id="W7L-Mf-gZ3"/>
                     </connections>
@@ -230,7 +230,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="q4Y-uV-yzn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yec-uG-61T">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="yec-uG-61T">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,9 +248,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info" width="74" height="74"/>
-        <image name="lineup" width="74" height="74"/>
-        <image name="map" width="72" height="72"/>
+        <image name="icons8-about-50" width="50" height="50"/>
+        <image name="icons8-guitar-50 (1)" width="50" height="50"/>
+        <image name="icons8-marker-filled-50" width="50" height="50"/>
         <image name="news" width="79" height="79"/>
     </resources>
 </document>
