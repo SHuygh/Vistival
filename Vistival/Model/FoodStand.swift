@@ -13,12 +13,12 @@ public class FoodStand: NSObject, MKAnnotation {
     
     public var coordinate: CLLocationCoordinate2D;
     var id:Int;
-    var name:String;
+    public var title:String?;
     var descriptionFood: String;
     
     init(coordinate:CLLocationCoordinate2D, name:String, id:Int, descriptionFood:String) {
         self.coordinate = coordinate;
-        self.name = name;
+        self.title = name;
         self.id = id;
         self.descriptionFood = descriptionFood;
     }

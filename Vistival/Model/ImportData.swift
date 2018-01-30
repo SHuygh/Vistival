@@ -62,57 +62,57 @@ public class ImportData{
         //Zaterdag
         //18u15
         time = Date.init(timeIntervalSince1970: 1533665700);
-        let artist1 = Artist.init(name: "Admiral Freebie", stageID: 1, time: time, image: "test", duration:45);
+        let artist1 = Artist.init(name: "Admiral Freebie", stageID: 0, time: time, image: "test", duration:45);
         
         //17u00
         time = Date.init(timeIntervalSince1970: 1533661200);
-        let artist2 = Artist.init(name: "Blue Oyster Cult", stageID: 1, time: time, image: "test", duration:30)
+        let artist2 = Artist.init(name: "Blue Oyster Cult", stageID: 0, time: time, image: "test", duration:30)
         
         
         //19u30
         time = Date.init(timeIntervalSince1970: 1533670200);
-        let artist3 = Artist.init(name: "Eels", stageID: 1, time: time, image: "test", duration:90)
+        let artist3 = Artist.init(name: "Eels", stageID: 0, time: time, image: "test", duration:90)
         
         //Zondag
         //18u00
         time = Date.init(timeIntervalSince1970: 1533751200);
-        let artist4 = Artist.init(name: "Reel big Fish", stageID: 1, time: time, image: "test", duration: 45)
+        let artist4 = Artist.init(name: "Reel big Fish", stageID: 0, time: time, image: "test", duration: 45)
         
         //17u00
         time = Date.init(timeIntervalSince1970: 1533747600);
-        let artist5 = Artist.init(name: "Funky Fish", stageID: 1, time: time, image: "test", duration: 50)
+        let artist5 = Artist.init(name: "Funky Fish", stageID: 0, time: time, image: "test", duration: 50)
         
         //19u30
         time = Date.init(timeIntervalSince1970: 1533756600);
-        let artist6 = Artist.init(name: "Moby Dick", stageID: 1, time: time, image: "test", duration: 75)
+        let artist6 = Artist.init(name: "Moby Dick", stageID: 0, time: time, image: "test", duration: 75)
         
         //The shrimp
         //Zaterdag
         //18u15
         time = Date.init(timeIntervalSince1970: 1533665700);
-        let artist7 = Artist.init(name: "Captain Winokio", stageID: 2, time: time, image: "test", duration: 30);
+        let artist7 = Artist.init(name: "Captain Winokio", stageID: 1, time: time, image: "test", duration: 30);
         
         //17u00
         time = Date.init(timeIntervalSince1970: 1533661200);
-        let artist8 = Artist.init(name: "The pearl", stageID: 2, time: time, image: "test", duration: 60)
+        let artist8 = Artist.init(name: "The pearl", stageID: 1, time: time, image: "test", duration: 60)
         
         
         //19u30
         time = Date.init(timeIntervalSince1970: 1533670200);
-        let artist9 = Artist.init(name: "Dory", stageID: 2, time: time, image: "test", duration:50)
+        let artist9 = Artist.init(name: "Dory", stageID: 1, time: time, image: "test", duration:50)
         
         //Zondag
         //18u00
         time = Date.init(timeIntervalSince1970: 1533751200);
-        let artist10 = Artist.init(name: "Shrimpnation", stageID: 2, time: time, image: "test", duration: 65)
+        let artist10 = Artist.init(name: "Shrimpnation", stageID: 1, time: time, image: "test", duration: 65)
         
         //17u00
         time = Date.init(timeIntervalSince1970: 1533747600);
-        let artist11 = Artist.init(name: "Deep sea", stageID: 2, time: time, image: "test", duration: 85)
+        let artist11 = Artist.init(name: "Deep sea", stageID: 1, time: time, image: "test", duration: 85)
         
         //19u30
         time = Date.init(timeIntervalSince1970: 1533756600);
-        let artist12 = Artist.init(name: "Harpooners", stageID: 2, time: time, image: "test", duration: 45)
+        let artist12 = Artist.init(name: "Harpooners", stageID: 1, time: time, image: "test", duration: 45)
         
         artistList.append(artist1);
         artistList.append(artist2);
@@ -125,19 +125,21 @@ public class ImportData{
         artistList.append(artist9);
         artistList.append(artist10);
         artistList.append(artist11);
-        artistList.append(artist11);
+        artistList.append(artist12);
         
     }
     
     func makeStageList(){
         let coordinateStage1 = CLLocationCoordinate2DMake(51.1523453940995, 2.72279494119528)
-        let stage1 = Stage.init(coordinate: coordinateStage1, name: "Main Stage", id: 1)
+        let stage1 = Stage.init(coordinate: coordinateStage1, name: "Main Stage", id: 0)
 
         let coordinateStage2 = CLLocationCoordinate2DMake(51.1519911145087, 2.72154595039555)
-        let stage2 = Stage.init(coordinate: coordinateStage2, name: "The Shrimp", id: 2)
+        let stage2 = Stage.init(coordinate: coordinateStage2, name: "The Shrimp", id: 1)
         
         stageList.append(stage1);
         stageList.append(stage2);
+        
+        stageList.sort(by: {$0.id < $1.id})
         
     }
     
@@ -166,6 +168,7 @@ public class ImportData{
         foodCourt.append(foodstand4)
         foodCourt.append(foodstand5)
         foodCourt.append(foodstand6)
+        
     }
 }
 
