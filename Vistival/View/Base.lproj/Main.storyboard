@@ -73,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eM1-gc-fBi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eM1-gc-fBi">
                                 <rect key="frame" x="0.0" y="101" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -107,29 +107,39 @@
                                     <outlet property="delegate" destination="cJ7-nd-Oh5" id="o6H-sY-V7r"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqL-E6-tBR">
-                                <rect key="frame" x="71" y="38" width="63" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqL-E6-tBR">
+                                <rect key="frame" x="0.0" y="0.0" width="187" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="1Ly-cH-xwP"/>
+                                </constraints>
                                 <state key="normal" title="Zaterdag"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tf-b8-YFi">
-                                <rect key="frame" x="254" y="38" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tf-b8-YFi">
+                                <rect key="frame" x="187" y="0.0" width="188" height="93"/>
                                 <state key="normal" title="Zondag"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eM1-gc-fBi" firstAttribute="top" secondItem="mBV-3e-5yu" secondAttribute="top" id="Abx-jY-T9B"/>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="top" secondItem="5tf-b8-YFi" secondAttribute="bottom" constant="8" symbolic="YES" id="26d-gs-qU3"/>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="top" secondItem="mBV-3e-5yu" secondAttribute="top" constant="101" id="Abx-jY-T9B"/>
                             <constraint firstItem="eM1-gc-fBi" firstAttribute="leading" secondItem="7aS-IC-QFm" secondAttribute="leading" id="DMb-64-GjG"/>
                             <constraint firstItem="eM1-gc-fBi" firstAttribute="bottom" secondItem="7aS-IC-QFm" secondAttribute="bottom" id="JUr-dR-XWX"/>
+                            <constraint firstItem="GqL-E6-tBR" firstAttribute="leading" secondItem="eM1-gc-fBi" secondAttribute="leading" id="Ocm-zN-xTy"/>
+                            <constraint firstItem="eM1-gc-fBi" firstAttribute="top" secondItem="GqL-E6-tBR" secondAttribute="bottom" constant="4" id="aqQ-sH-Ddg"/>
+                            <constraint firstItem="5tf-b8-YFi" firstAttribute="leading" secondItem="GqL-E6-tBR" secondAttribute="trailing" id="dCP-yQ-el1"/>
+                            <constraint firstItem="GqL-E6-tBR" firstAttribute="top" secondItem="mBV-3e-5yu" secondAttribute="top" id="hUZ-VN-zsR"/>
                             <constraint firstItem="eM1-gc-fBi" firstAttribute="trailing" secondItem="7aS-IC-QFm" secondAttribute="trailing" id="hhC-Yu-mOe"/>
+                            <constraint firstItem="GqL-E6-tBR" firstAttribute="top" secondItem="5tf-b8-YFi" secondAttribute="top" id="jrW-sg-MT6"/>
+                            <constraint firstItem="5tf-b8-YFi" firstAttribute="trailing" secondItem="eM1-gc-fBi" secondAttribute="trailing" id="vF9-ga-uVN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7aS-IC-QFm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-guitar-50 (1)" landscapeImage="icons8-guitar-50 (1)" largeContentSizeImage="icons8-guitar-50 (1)" id="fhf-Pu-g2m"/>
                     <connections>
                         <outlet property="artistview" destination="eM1-gc-fBi" id="6TK-XX-2UQ"/>
+                        <outlet property="btnZaterdag" destination="GqL-E6-tBR" id="VBU-5a-uKp"/>
+                        <outlet property="btnZondag" destination="5tf-b8-YFi" id="Vrc-w5-sGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgY-GM-0j6" userLabel="First Responder" sceneMemberID="firstResponder"/>
