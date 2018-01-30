@@ -13,15 +13,19 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     var lineup = ImportData.data.artistList
     var showID = 0;
     var testOrigin = "";
+    var showStage:[Bool] = [Bool]()
     
     @IBOutlet weak var artistview: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad();
         // Do any additional setup after loading the view.
     //sort line-up in functie van de tijd
         
+        for stage in ImportData.data.stageList{
+            showStage.append(true)
+        }
+            
         filterLineup();
     }
 
@@ -40,30 +44,48 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lineup.filter({$0.stageID == section }).count
+  
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        return ImportData.data.stageList[section].title;
-//    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var btnShowStage = UIButton.init(type: .system);
-        btnShowStage.accessibilityLabel = "\(section)"
-        btnShowStage.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside)
-        
-        let cell = artistview.dequeueReusableCell(withIdentifier: "cell")
-        
-        cell?.textLabel?.text = ImportData.data.stageList[section].title;
 
-        return cell;
+        let frame = artistview.frame;
+        
+        let showStageBtn = UIButton.init(frame: CGRect.init(x: frame.size.width - 70, y: 0, width: 60, height: 50))
+        
+        showStageBtn.setTitle("...", for: .normal);
+        showStageBtn.backgroundColor = UIColor.red;
+        showStageBtn.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside);
+        
+        
+        showStageBtn.accessibilityLabel = "\(section)"
+        
+        let header = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        header.addSubview(showStageBtn)
+        
+        header.isUserInteractionEnabled = true;
+        return header;
+
+        
     }
     
+    
     @objc func showStageBtnClicked(sender: UIButton){
-        print(sender.accessibilityLabel)
+        let btnID = (sender.accessibilityLabel as! NSString).integerValue
+        showStage[btnID] = !showStage[btnID]
+        
+        self.filterLineup()
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         var totalRow = indexPath.row;
         
         totalRowLoop: for artist in lineup {
@@ -132,6 +154,13 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         default: //totale lijst
             break;
         }
+        
+        for (index, stage) in showStage.enumerated() {
+            if(!stage){
+                lineup = lineup.filter({$0.stageID != index })
+            }
+        }
+        
         artistview.reloadData();
         
     }
