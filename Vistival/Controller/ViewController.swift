@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
 
         //all data is put in the arrays in ImportData
+        newsItems.sort(by: {$0.id > $1.id})
        
     }
 

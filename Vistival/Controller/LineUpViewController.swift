@@ -116,7 +116,9 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         let timeSelected = formatter.string(from: selected.time)
         
         let stageSelected:String = ImportData.data.stageList[selected.stageID].title!;
-
+        
+        cell.imageView?.image = UIImage.init(named: "placeholder.jpg")
+        
         cell.textLabel?.text = "\(selected.name) \(testOrigin)"
         cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
         
