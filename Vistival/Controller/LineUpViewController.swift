@@ -126,6 +126,8 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
+    @IBAction func imageOfCellTapped(_ sender: UITapGestureRecognizer) {
+    }
     @IBAction func zaterdagPressed() {
         if(showID != 1){
             showID = 1;
