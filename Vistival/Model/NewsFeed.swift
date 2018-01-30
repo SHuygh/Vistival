@@ -13,11 +13,13 @@ public class NewsFeed{
     var title:String;
     var body: String;
     var id:Int;
+    var img:String;
     
-    init(title:String, body:String, id:Int) {
-        self.title = title;
-        self.body = body;
-        self.id = id;
+    init(title:String, body:String, id:Int, img:String) {
+        self.title = title
+        self.body = body
+        self.id = id
+        self.img = img
     }
     
     

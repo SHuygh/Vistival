@@ -55,6 +55,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gdc-Lo-mhZ"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grR-zq-oE3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -74,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="-866"/>
+            <point key="canvasLocation" x="282" y="-721"/>
         </scene>
         <!--News Items View Controller-->
         <scene sceneID="Se4-CZ-XQz">
@@ -118,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUg-Hm-krZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381.5999999999999" y="-878.41079460269873"/>
+            <point key="canvasLocation" x="1161" y="-940"/>
         </scene>
         <!--Map-->
         <scene sceneID="xlb-X7-zED">
