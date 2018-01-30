@@ -123,7 +123,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 let timetableButton = UIButton.init(type: .detailDisclosure);
                 
-                timetableButton.accessibilityIdentifier = stagePin.title;
+                timetableButton.accessibilityIdentifier = "\(stagePin.id)";
                 timetableButton.addTarget(self, action: #selector(goToTimetable(sender:)), for: .touchUpInside)
                 
                 view.rightCalloutAccessoryView =  timetableButton;
@@ -161,12 +161,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @objc func goToTimetable(sender: UIButton){
 
-        tabBarController?.selectedIndex = 1
+
         let lineUpVC = tabBarController?.childViewControllers[1] as! LineUpViewController;
         
+        var tmpShowStage = [Bool]()
         
-        lineUpVC.testOrigin = sender.accessibilityIdentifier!;
+        for stage in ImportData.data.stageList{
+            tmpShowStage.append(false)
+        }
         
+        tmpShowStage[(sender.accessibilityIdentifier as! NSString).integerValue] = true;
+        
+        lineUpVC.showStage = tmpShowStage;
+        
+        lineUpVC.showID = 0;
+        
+        tabBarController?.selectedIndex = 1
     }
     
 

@@ -78,6 +78,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     @objc func showStageBtnClicked(sender: UIButton){
+        
         let btnID = (sender.accessibilityLabel as! NSString).integerValue
         showStage[btnID] = !showStage[btnID]
         
@@ -163,6 +164,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         artistview.reloadData();
         
+
     }
     
     
