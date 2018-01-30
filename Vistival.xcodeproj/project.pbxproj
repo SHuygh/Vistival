@@ -10,6 +10,7 @@
 		5E594BEE201F585200335955 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BED201F585200335955 /* InfoViewController.swift */; };
 		5E594BF0201F651300335955 /* DetailFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BEF201F651300335955 /* DetailFAQViewController.swift */; };
 		5E594BF2201F722100335955 /* LineUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF1201F722100335955 /* LineUpViewController.swift */; };
+		5E594BF4202079C500335955 /* NewsItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF3202079C500335955 /* NewsItemsViewController.swift */; };
 		5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA872C3201F490D0046F5DA /* MapViewController.swift */; };
 		9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F08201F29E40053A03B /* AppDelegate.swift */; };
 		9EC66F0B201F29E40053A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F0A201F29E40053A03B /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		5E594BED201F585200335955 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		5E594BEF201F651300335955 /* DetailFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFAQViewController.swift; sourceTree = "<group>"; };
 		5E594BF1201F722100335955 /* LineUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpViewController.swift; sourceTree = "<group>"; };
+		5E594BF3202079C500335955 /* NewsItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemsViewController.swift; sourceTree = "<group>"; };
 		5EA872C3201F490D0046F5DA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9EC66F05201F29E40053A03B /* Vistival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vistival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC66F08201F29E40053A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				5E594BED201F585200335955 /* InfoViewController.swift */,
 				5E594BEF201F651300335955 /* DetailFAQViewController.swift */,
 				5E594BF1201F722100335955 /* LineUpViewController.swift */,
+				5E594BF3202079C500335955 /* NewsItemsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */,
 				5E594BF0201F651300335955 /* DetailFAQViewController.swift in Sources */,
 				5E594BEE201F585200335955 /* InfoViewController.swift in Sources */,
+				5E594BF4202079C500335955 /* NewsItemsViewController.swift in Sources */,
 				5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

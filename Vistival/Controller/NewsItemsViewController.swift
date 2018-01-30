@@ -1,39 +1,37 @@
 //
-//  DetailFAQViewController.swift
+//  NewsItemsViewController.swift
 //  Vistival
 //
-//  Created by Daan Demeulemeester on 29/01/2018.
+//  Created by Daan Demeulemeester on 30/01/2018.
 //  Copyright © 2018 Stijn Huygh. All rights reserved.
 //
 
 import UIKit
 
-class DetailFAQViewController: UIViewController {
-    
+class NewsItemsViewController: UIViewController {
+
     @IBOutlet weak var lblDetailTxt: UITextView!
-    var currentItem:FAQ?
-
-
+    var currentItem:NewsFeed?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
         lblDetailTxt.text = currentItem?.title
         lblDetailTxt.text = currentItem?.body
-
-
     }
-    @IBAction func dismiss(_ sender: Any) {
+    
+    @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
 
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     /*
     // MARK: - Navigation
 

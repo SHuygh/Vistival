@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
+
 
 class ViewController: UIViewController{
     
     
+    @IBOutlet weak var tableView: UITableView!
     
-    let data = ImportData.data;
+    let data = ImportData.data
+    var newsItems = ImportData.data.newsList
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +30,6 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        print("test")
     }
 
 
