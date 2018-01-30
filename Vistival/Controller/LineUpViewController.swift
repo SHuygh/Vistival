@@ -18,7 +18,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad();
         // Do any additional setup after loading the view.
-    
+    //sort line-up in functie van de tijd
         lineup.sort(by: { $0.time < $1.time })
     }
 
