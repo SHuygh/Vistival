@@ -113,10 +113,16 @@
                                     <constraint firstAttribute="width" constant="187" id="1Ly-cH-xwP"/>
                                 </constraints>
                                 <state key="normal" title="Zaterdag"/>
+                                <connections>
+                                    <action selector="zaterdagPressed" destination="cJ7-nd-Oh5" eventType="touchUpInside" id="1Fu-xz-eoo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tf-b8-YFi">
                                 <rect key="frame" x="187" y="0.0" width="188" height="93"/>
                                 <state key="normal" title="Zondag"/>
+                                <connections>
+                                    <action selector="zondagPressed" destination="cJ7-nd-Oh5" eventType="touchUpInside" id="TQ5-eS-zMc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,8 +144,6 @@
                     <tabBarItem key="tabBarItem" title="" image="icons8-guitar-50 (1)" landscapeImage="icons8-guitar-50 (1)" largeContentSizeImage="icons8-guitar-50 (1)" id="fhf-Pu-g2m"/>
                     <connections>
                         <outlet property="artistview" destination="eM1-gc-fBi" id="6TK-XX-2UQ"/>
-                        <outlet property="btnZaterdag" destination="GqL-E6-tBR" id="VBU-5a-uKp"/>
-                        <outlet property="btnZondag" destination="5tf-b8-YFi" id="Vrc-w5-sGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgY-GM-0j6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,9 +15,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var artistview: UITableView!
     
-    @IBOutlet weak var btnZaterdag: UIButton!
-    @IBOutlet weak var btnZondag: UIButton!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -76,7 +74,11 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-
+    @IBAction func zaterdagPressed() {
+    }
+    
+    @IBAction func zondagPressed() {
+    }
     
 //    // MARK: - Navigation
 //
