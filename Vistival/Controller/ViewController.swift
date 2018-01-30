@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblImage: UIImageView!
     
     let data = ImportData.data
     var newsItems = ImportData.data.newsList
@@ -41,10 +42,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         let currentItem:NewsFeed = newsItems[indexPath.row]
-        cell?.textLabel?.text = newsItems[indexPath.row].title
-        cell?.imageView?.image = UIImage.init(named: newsItems[indexPath.row].img)
-        return cell!
+        
+        let recognizer = UITapGestureRecognizer.
+        
+        
+//        cell?.textLabel?.text = newsItems[indexPath.row].title
+        
+//        cell?.imageView?.image = UIImage.init(named: newsItems[indexPath.row].img)
+        
+        
+        
+        
+        return cell
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
