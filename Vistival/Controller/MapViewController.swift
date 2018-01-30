@@ -55,16 +55,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func setLocation(){
         // coordinaten van het festival
         
-        let center = CLLocationCoordinate2D(latitude: 51.152256, longitude: 2.722487)
-        let span = MKCoordinateSpanMake(0.0015, 0.0015)
-        let region = MKCoordinateRegion(center: center, span: span)
-        
-        mapView.region = region
+        let center = CLLocationCoordinate2D(latitude: 51.152992, longitude: 2.721108)
         
         //set orientation in the right direction (53° relative to north)
+        mapView.centerCoordinate = center
         mapView.camera.heading = 53;
+        mapView.camera.altitude = 250
+        mapView.camera.pitch = 60;
         mapView.setCamera(mapView.camera, animated: false);
         
+        mapView.mapType = .hybrid
         //no interaction enabled;
         mapView.isRotateEnabled = false;
         mapView.isScrollEnabled = false;
