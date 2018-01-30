@@ -55,16 +55,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func setLocation(){
         // coordinaten van het festival
         
-        let center = CLLocationCoordinate2D(latitude: 51.152256, longitude: 2.722487)
-        let span = MKCoordinateSpanMake(0.0015, 0.0015)
-        let region = MKCoordinateRegion(center: center, span: span)
-        
-        mapView.region = region
+        let center = CLLocationCoordinate2D(latitude: 51.152992, longitude: 2.721108)
         
         //set orientation in the right direction (53° relative to north)
+        mapView.centerCoordinate = center
         mapView.camera.heading = 53;
+        mapView.camera.altitude = 250
+        mapView.camera.pitch = 60;
         mapView.setCamera(mapView.camera, animated: false);
         
+        mapView.mapType = .hybrid
         //no interaction enabled;
         mapView.isRotateEnabled = false;
         mapView.isScrollEnabled = false;
@@ -123,7 +123,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 let timetableButton = UIButton.init(type: .detailDisclosure);
                 
-                timetableButton.accessibilityIdentifier = stagePin.title;
+                timetableButton.accessibilityIdentifier = "\(stagePin.id)";
                 timetableButton.addTarget(self, action: #selector(goToTimetable(sender:)), for: .touchUpInside)
                 
                 view.rightCalloutAccessoryView =  timetableButton;
@@ -161,12 +161,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @objc func goToTimetable(sender: UIButton){
 
-        tabBarController?.selectedIndex = 1
+
         let lineUpVC = tabBarController?.childViewControllers[1] as! LineUpViewController;
         
+        var tmpShowStage = [Bool]()
         
-        lineUpVC.testOrigin = sender.accessibilityIdentifier!;
+        for stage in ImportData.data.stageList{
+            tmpShowStage.append(false)
+        }
         
+        tmpShowStage[(sender.accessibilityIdentifier as! NSString).integerValue] = true;
+        
+        lineUpVC.showStage = tmpShowStage;
+        
+        lineUpVC.showID = 0;
+        
+        tabBarController?.selectedIndex = 1
     }
     
 

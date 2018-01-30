@@ -130,10 +130,10 @@ public class ImportData{
     }
     
     func makeStageList(){
-        let coordinateStage1 = CLLocationCoordinate2DMake(51.1523453940995, 2.72279494119528)
+        let coordinateStage1 = CLLocationCoordinate2DMake(51.1527453940995, 2.72119494119528)
         let stage1 = Stage.init(coordinate: coordinateStage1, name: "Main Stage", id: 0)
 
-        let coordinateStage2 = CLLocationCoordinate2DMake(51.1519911145087, 2.72154595039555)
+        let coordinateStage2 = CLLocationCoordinate2DMake(51.1523911145087, 2.72000595039555)
         let stage2 = Stage.init(coordinate: coordinateStage2, name: "The Shrimp", id: 1)
         
         stageList.append(stage1);
@@ -144,22 +144,22 @@ public class ImportData{
     }
     
     func makeFoodCourt(){
-        let coordinateFoodStand1 = CLLocationCoordinate2DMake(51.1517800410752, 2.72170667319662)
+        let coordinateFoodStand1 = CLLocationCoordinate2DMake(51.1521800410752, 2.72010667319662)
         let foodstand1 = FoodStand.init(coordinate: coordinateFoodStand1, name: "Shrimps", id: 1, descriptionFood: "Everything shrimp related")
         
-        let coordinateFoodStand2 = CLLocationCoordinate2DMake(51.1517238961145, 2.72182552130431)
+        let coordinateFoodStand2 = CLLocationCoordinate2DMake(51.1521238961145, 2.72022552130431)
         let foodstand2 = FoodStand.init(coordinate: coordinateFoodStand2, name: "Bar", id: 2, descriptionFood: "Softdrinks, beer, wine, ....")
         
-        let coordinateFoodStand3 = CLLocationCoordinate2DMake(51.151776246496, 2.72195827763361)
+        let coordinateFoodStand3 = CLLocationCoordinate2DMake(51.152176246496, 2.72035827763361)
         let foodstand3 = FoodStand.init(coordinate: coordinateFoodStand3, name: "Burgers by John", id: 3, descriptionFood: "Burgers and more")
         
-        let coordinateFoodStand4 = CLLocationCoordinate2DMake(51.1518474374522, 2.72213969486354)
+        let coordinateFoodStand4 = CLLocationCoordinate2DMake(51.1522474374522, 2.72053969486354)
         let foodstand4 = FoodStand.init(coordinate: coordinateFoodStand4, name: "De Nieuwe poort", id: 4, descriptionFood: "Specialiteiten uit Nieuwpoort")
         
-        let coordinateFoodStand5 = CLLocationCoordinate2DMake(51.1522295910231, 2.72184805522625)
+        let coordinateFoodStand5 = CLLocationCoordinate2DMake(51.1526295910231, 2.72024805522625)
         let foodstand5 = FoodStand.init(coordinate: coordinateFoodStand5, name: "Bar", id: 5, descriptionFood: "Softdrinks, beer, wine, ....")
         
-        let coordinateFoodStand6 = CLLocationCoordinate2DMake(51.1523202756963, 2.72207071577353)
+        let coordinateFoodStand6 = CLLocationCoordinate2DMake(51.1527202756963, 2.72047071577353)
         let foodstand6 = FoodStand.init(coordinate: coordinateFoodStand6, name: "Cocktails", id: 6, descriptionFood: "Shrimp cocktails")
         
         foodCourt.append(foodstand1)
