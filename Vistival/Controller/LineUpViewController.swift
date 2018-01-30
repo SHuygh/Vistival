@@ -11,17 +11,22 @@ import UIKit
 class LineUpViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
     var lineup = ImportData.data.artistList
+    var showID = 0;
     var testOrigin = "";
+    var showStage:[Bool] = [Bool]()
     
     @IBOutlet weak var artistview: UITableView!
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad();
         // Do any additional setup after loading the view.
     //sort line-up in functie van de tijd
-        lineup.sort(by: { $0.time < $1.time })
+        
+        for stage in ImportData.data.stageList{
+            showStage.append(true)
+        }
+            
+        filterLineup();
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +35,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        artistview.reloadData();
+        filterLineup();
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,17 +44,58 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lineup.filter({$0.stageID == section }).count
+  
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let frame = artistview.frame;
         
-        return ImportData.data.stageList[section].title;
+        let showStageBtn = UIButton.init(frame: CGRect.init(x: frame.size.width - 70, y: 0, width: 60, height: 50))
+        
+        showStageBtn.setTitle("...", for: .normal);
+        showStageBtn.backgroundColor = UIColor.red;
+        showStageBtn.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside);
+        
+        
+        showStageBtn.accessibilityLabel = "\(section)"
+        
+        let header = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        header.addSubview(showStageBtn)
+        
+        header.isUserInteractionEnabled = true;
+        return header;
+
+        
+    }
+    
+    
+    @objc func showStageBtnClicked(sender: UIButton){
+        let btnID = (sender.accessibilityLabel as! NSString).integerValue
+        showStage[btnID] = !showStage[btnID]
+        
+        self.filterLineup()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        var totalRow = indexPath.row;
         
-        let selected:Artist = lineup[indexPath.row]
+        totalRowLoop: for artist in lineup {
+            if(indexPath.section == artist.stageID){
+                break totalRowLoop
+            }
+            totalRow += 1;
+        }
+        
+        let selected:Artist = lineup[totalRow]
         
         let formatter:DateFormatter = DateFormatter.init();
         formatter.dateStyle = .short;
@@ -61,24 +107,64 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         cell.textLabel?.text = "\(selected.name) \(testOrigin)"
         cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
         
-        switch indexPath.section {
-        case 0:
-            cell.backgroundColor = UIColor.blue
-        case 1:
-            cell.backgroundColor = UIColor.red
-        default:
-            cell.backgroundColor = UIColor.lightGray
-        }
-        
         return cell
     }
     
     
     @IBAction func zaterdagPressed() {
+        if(showID != 1){
+            showID = 1;
+        }else{
+            showID = 0
+        }
+        self.filterLineup()
     }
     
     @IBAction func zondagPressed() {
+        if(showID != 2){
+            showID = 2;
+        }else{
+            showID = 0
+        }
+        self.filterLineup()
     }
+    
+    func filterLineup(){
+        lineup = ImportData.data.artistList;
+        lineup.sort(by: {
+            
+            if($0.stageID < $1.stageID){
+                return true;
+            }
+            if($0.stageID == $1.stageID && $0.time < $1.time){
+                return true;
+            }else{
+                return false;
+            }
+            
+        })
+        
+        switch showID {
+        case 1:
+            //alles tot en met zondag 6 am
+            lineup = lineup.filter({$0.time <= Date.init(timeIntervalSince1970: 1533708000)})
+        case 2:
+            //alles na zondag 6am
+            lineup = lineup.filter({$0.time > Date.init(timeIntervalSince1970: 1533708000)})
+        default: //totale lijst
+            break;
+        }
+        
+        for (index, stage) in showStage.enumerated() {
+            if(!stage){
+                lineup = lineup.filter({$0.stageID != index })
+            }
+        }
+        
+        artistview.reloadData();
+        
+    }
+    
     
 //    // MARK: - Navigation
 //
