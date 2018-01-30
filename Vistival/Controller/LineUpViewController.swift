@@ -41,7 +41,6 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        
         return ImportData.data.stageList[section].title;
     }
     
@@ -55,10 +54,20 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         formatter.timeStyle = .short;
         let timeSelected = formatter.string(from: selected.time)
         
-        var stageSelected:String = ImportData.data.stageList[selected.stageID].title!;
+        let stageSelected:String = ImportData.data.stageList[selected.stageID].title!;
 
         cell.textLabel?.text = "\(selected.name) \(testOrigin)"
         cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
+        
+        switch indexPath.section {
+        case 0:
+            cell.backgroundColor = UIColor.blue
+        case 1:
+            cell.backgroundColor = UIColor.red
+        default:
+            cell.backgroundColor = UIColor.lightGray
+        }
+        
         return cell
     }
     
