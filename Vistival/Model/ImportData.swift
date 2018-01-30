@@ -48,9 +48,9 @@ public class ImportData{
     }
     
     func makeNewsList(){
-        let news1 = NewsFeed.init(title: "Vistival date announced", body: "Vistival gaat door van 07/08/2018 - 08/08/2018 te Havengeul, 8620, Nieuwpoort", id: 0)
-        let news2 = NewsFeed.init(title: "Admiral Freebie announced", body: "Admiral Freebie zal spelen op zondag 18u15", id: 1)
-        let news3 = NewsFeed.init(title: "New names announced", body: "Zaterdag: Reel big Fish, Funky Fish \n Zondag: Blue Oyster Cult, Eels, The turtles", id: 2)
+        let news1 = NewsFeed.init(title: "Vistival date announced", body: "Vistival gaat door van 07/08/2018 - 08/08/2018 te Havengeul, 8620, Nieuwpoort", id: 0, img:"placeholder.jpg")
+        let news2 = NewsFeed.init(title: "Admiral Freebie announced", body: "Admiral Freebie zal spelen op zondag 18u15", id: 1, img:"placeholder.jpg")
+        let news3 = NewsFeed.init(title: "New names announced", body: "Zaterdag: Reel big Fish, Funky Fish \n Zondag: Blue Oyster Cult, Eels, The turtles", id: 2, img:"placeholder.jpg")
         
         newsList = [news1, news2, news3];
     }
