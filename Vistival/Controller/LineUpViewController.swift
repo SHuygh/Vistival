@@ -28,7 +28,9 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         for stage in ImportData.data.stageList{
             showStage.append(true)
         }
-            
+        btnZaterdag.backgroundColor = UIColor.lightGray;
+        btnZondag.backgroundColor = UIColor.lightGray;
+        
         filterLineup();
     }
 
@@ -38,6 +40,16 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if(showID == 0){
+        btnZaterdag.backgroundColor = UIColor.lightGray;
+        btnZondag.backgroundColor = UIColor.lightGray;
+        }else if (showID == 1){
+            btnZaterdag.backgroundColor = UIColor.lightGray;
+            btnZondag.backgroundColor = UIColor.darkGray;
+        }else{
+            btnZaterdag.backgroundColor = UIColor.darkGray;
+            btnZondag.backgroundColor = UIColor.lightGray;
+        }
         lineup = ImportData.data.artistList;
         filterLineup();
     }
@@ -169,18 +181,28 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     @IBAction func zaterdagPressed() {
+
         if(showID != 1){
+            btnZaterdag.backgroundColor = UIColor.lightGray;
+            btnZondag.backgroundColor = UIColor.darkGray;
             showID = 1;
         }else{
+            btnZaterdag.backgroundColor = UIColor.lightGray;
+            btnZondag.backgroundColor = UIColor.lightGray;
             showID = 0
         }
+        
         self.filterLineup()
     }
     
     @IBAction func zondagPressed() {
         if(showID != 2){
+            btnZaterdag.backgroundColor = UIColor.darkGray;
+            btnZondag.backgroundColor = UIColor.lightGray;
             showID = 2;
         }else{
+            btnZaterdag.backgroundColor = UIColor.lightGray;
+            btnZondag.backgroundColor = UIColor.lightGray;
             showID = 0
         }
         self.filterLineup()
