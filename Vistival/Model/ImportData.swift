@@ -37,20 +37,21 @@ public class ImportData{
     }
     
     func fillAllData(){
-        self.news();
+ //       self.news();
         
         //version control should be added once core data is introduced for all classes
         //self.accessRESTful(request: requestVersion)
-        self.accessRESTful(request: requestArtist)
-        self.accessRESTful(request: requestStages)
-        self.accessRESTful(request: requestFAQ)
-        self.accessRESTful(request: requestFoodstands)
+//        self.accessRESTful(request: requestArtist)
+//        self.accessRESTful(request: requestStages)
+//        self.accessRESTful(request: requestFAQ)
+//        self.accessRESTful(request: requestFoodstands)
         
-//        self.makeFAQ();
-//        self.makeNewsList();
-//        self.makeFoodCourt();
-//        self.makeStageList();
-//        self.makeArtistList();
+        self.makeFAQ();
+        self.makeNewsList();
+        self.makeFoodCourt();
+        self.makeStageList();
+        self.makeArtistList();
+        self.fetchPersonalLineUp()
     
     }
     
@@ -240,10 +241,10 @@ public class ImportData{
             
             let formater = DateFormatter.init();
             formater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss";
-            var timeString = jsonObject.value(forKey: "time") as! String;
-            var time = formater.date(from: timeString)
+            let timeString = jsonObject.value(forKey: "time") as! String;
+            let time = formater.date(from: timeString)
         
-            var artist:Artist = Artist(name: name, stageID: stageID, time: time!, image: image, duration: duration, id: id)
+            let artist:Artist = Artist(name: name, stageID: stageID, time: time!, image: image, duration: duration, id: id)
             
             self.artistList.append(artist)
         }

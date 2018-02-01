@@ -36,11 +36,10 @@ class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cellIdentifier = "cell"
         let cell = tableView.dequeueReusableCell(withIdentifier:"cell")
         let currentItem:FAQ = faqItems[indexPath.row]
 
-        cell?.textLabel?.text = faqItems[indexPath.row].title
+        cell?.textLabel?.text = currentItem.title
         return cell!
     }
     

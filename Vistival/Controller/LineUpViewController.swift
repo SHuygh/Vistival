@@ -13,6 +13,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     var lineup = ImportData.data.artistList
     var showID = 0;
     var showStage:[Bool] = [Bool]()
+    var personalLineup = false;
     
     @IBOutlet weak var artistview: UITableView!
     
@@ -20,16 +21,22 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var btnZondag: UIButton!
     
+    @IBOutlet weak var btnZaZo: UIButton!
+    
+    @IBOutlet weak var btnPersonal: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         // Do any additional setup after loading the view.
     //sort line-up in functie van de tijd
         
-        for stage in ImportData.data.stageList{
+        for _ in ImportData.data.stageList{
             showStage.append(true)
         }
-        btnZaterdag.backgroundColor = UIColor.lightGray;
-        btnZondag.backgroundColor = UIColor.lightGray;
+        btnZaterdag.backgroundColor = UIColor.darkGray;
+        btnZondag.backgroundColor = UIColor.darkGray;
+        btnZaZo.backgroundColor = UIColor.lightGray
+        btnPersonal.setImage(UIImage.init(named: "unliked.png"), for: .normal)
         
         filterLineup();
     }
@@ -41,14 +48,17 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         if(showID == 0){
-        btnZaterdag.backgroundColor = UIColor.lightGray;
-        btnZondag.backgroundColor = UIColor.lightGray;
+        btnZaterdag.backgroundColor = UIColor.darkGray;
+        btnZondag.backgroundColor = UIColor.darkGray;
+            btnZaZo.backgroundColor = UIColor.lightGray;
         }else if (showID == 1){
             btnZaterdag.backgroundColor = UIColor.lightGray;
             btnZondag.backgroundColor = UIColor.darkGray;
+            btnZaZo.backgroundColor = UIColor.darkGray;
         }else{
             btnZaterdag.backgroundColor = UIColor.darkGray;
             btnZondag.backgroundColor = UIColor.lightGray;
+            btnZaZo.backgroundColor = UIColor.darkGray
         }
         lineup = ImportData.data.artistList;
         filterLineup();
@@ -92,6 +102,8 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
             lblHeader.center = CGPoint.init(x: frame.size.width/2.0, y: 25)
             lblHeader.textAlignment = .center;
             lblHeader.text = ImportData.data.stageList[section].title;
+            lblHeader.textColor = UIColor.white;
+            lblHeader.font = UIFont.init(name: lblHeader.font.fontName, size: 20)
         
         let header = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
         
@@ -99,6 +111,8 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
             header.addSubview(lblHeader)
         
             header.isUserInteractionEnabled = true;
+        
+        header.backgroundColor = #colorLiteral(red: 0.1371634007, green: 0.3475216925, blue: 0.3172403276, alpha: 1);
         
         return header;
 
@@ -108,7 +122,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     @objc func showStageBtnClicked(sender: UIButton){
         
-        let btnID = (sender.accessibilityLabel as! NSString).integerValue
+        let btnID = (sender.accessibilityLabel! as NSString).integerValue
         showStage[btnID] = !showStage[btnID]
         
         if(showStage[btnID]){
@@ -196,6 +210,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
        
             btnZaterdag.backgroundColor = UIColor.lightGray;
             btnZondag.backgroundColor = UIColor.darkGray;
+            btnZaZo.backgroundColor = UIColor.darkGray;
             showID = 1;
  
         
@@ -206,6 +221,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
 
             btnZaterdag.backgroundColor = UIColor.darkGray;
             btnZondag.backgroundColor = UIColor.lightGray;
+            btnZaZo.backgroundColor = UIColor.darkGray;
             showID = 2;
 
         self.filterLineup()
@@ -213,13 +229,22 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     @IBAction func zazopressed() {
-        btnZaterdag.backgroundColor = UIColor.lightGray;
-        btnZondag.backgroundColor = UIColor.lightGray;
+        btnZaterdag.backgroundColor = UIColor.darkGray;
+        btnZondag.backgroundColor = UIColor.darkGray;
+        btnZaZo.backgroundColor = UIColor.lightGray;
         showID = 0
         self.filterLineup();
     }
     
     @IBAction func personalPressed() {
+        personalLineup = !personalLineup
+
+        if(personalLineup){
+            btnPersonal.setImage(UIImage.init(named: "liked.png"), for: .normal)
+        }else{
+            btnPersonal.setImage(UIImage.init(named: "unliked.png"), for: .normal)
+        }
+        self.filterLineup();
     }
     
 
@@ -254,6 +279,8 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
                 lineup = lineup.filter({$0.stageID != index })
             }
         }
+        
+        lineup = lineup.filter({$0.personal == true || !personalLineup})
         
         artistview.reloadData();
         

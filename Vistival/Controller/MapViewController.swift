@@ -173,11 +173,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         var tmpShowStage = [Bool]()
         
-        for stage in ImportData.data.stageList{
+        for _ in ImportData.data.stageList{
             tmpShowStage.append(false)
         }
         
-        tmpShowStage[(sender.accessibilityIdentifier as! NSString).integerValue] = true;
+        tmpShowStage[(sender.accessibilityIdentifier! as NSString).integerValue] = true;
         
         lineUpVC.showStage = tmpShowStage;
         
