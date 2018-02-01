@@ -10,7 +10,9 @@ import UIKit
 
 class NewsItemsViewController: UIViewController {
 
+    @IBOutlet weak var lblImage: UIImageView!
     @IBOutlet weak var lblDetailTxt: UITextView!
+    @IBOutlet weak var lblTitle: UILabel!
     var currentItem:NewsFeed?
     
     
@@ -18,8 +20,11 @@ class NewsItemsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        lblDetailTxt.text = currentItem?.title
+        lblTitle.text = currentItem?.title
         lblDetailTxt.text = currentItem?.body
+        lblImage.image = UIImage.init(named: (currentItem?.img)!)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
