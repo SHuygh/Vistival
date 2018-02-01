@@ -76,8 +76,13 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         let showStageBtn = UIButton.init(frame: CGRect.init(x: frame.size.width - 70, y: 0, width: 60, height: 50))
         
-            showStageBtn.setTitle("...", for: .normal);
-            showStageBtn.backgroundColor = UIColor.red;
+            //showStageBtn.setTitle("...", for: .normal);
+            //showStageBtn.backgroundColor = UIColor.red;
+        if(showStage[section]){
+            showStageBtn.setImage(UIImage.init(named: "up.png"), for: .normal)
+        }else{
+            showStageBtn.setImage(UIImage.init(named: "drop-down.png"), for: .normal)
+        }
             showStageBtn.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside);
         
             showStageBtn.accessibilityLabel = "\(section)"
@@ -105,6 +110,12 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         let btnID = (sender.accessibilityLabel as! NSString).integerValue
         showStage[btnID] = !showStage[btnID]
+        
+        if(showStage[btnID]){
+            sender.setImage(UIImage.init(named: "up.png"), for: .normal)
+        }else{
+            sender.setImage(UIImage.init(named: "drop-down.png"), for: .normal)
+        }
         
         self.filterLineup()
     }
