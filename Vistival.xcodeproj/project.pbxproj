@@ -11,9 +11,8 @@
 		5E594BF0201F651300335955 /* DetailFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BEF201F651300335955 /* DetailFAQViewController.swift */; };
 		5E594BF2201F722100335955 /* LineUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF1201F722100335955 /* LineUpViewController.swift */; };
 		5E594BF4202079C500335955 /* NewsItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF3202079C500335955 /* NewsItemsViewController.swift */; };
+		5E7E750A202354CF008C9BC4 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E7509202354CF008C9BC4 /* FAQTableViewCell.swift */; };
 		5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA872C3201F490D0046F5DA /* MapViewController.swift */; };
-		9EB0389F2020C64000109B2A /* liked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB0389D2020C64000109B2A /* liked.png */; };
-		9EB038A02020C64000109B2A /* unliked.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB0389E2020C64000109B2A /* unliked.png */; };
 		9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F08201F29E40053A03B /* AppDelegate.swift */; };
 		9EC66F0B201F29E40053A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F0A201F29E40053A03B /* ViewController.swift */; };
 		9EC66F0E201F29E40053A03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC66F0C201F29E40053A03B /* Main.storyboard */; };
@@ -33,9 +32,8 @@
 		5E594BEF201F651300335955 /* DetailFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFAQViewController.swift; sourceTree = "<group>"; };
 		5E594BF1201F722100335955 /* LineUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpViewController.swift; sourceTree = "<group>"; };
 		5E594BF3202079C500335955 /* NewsItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemsViewController.swift; sourceTree = "<group>"; };
+		5E7E7509202354CF008C9BC4 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		5EA872C3201F490D0046F5DA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		9EB0389D2020C64000109B2A /* liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = liked.png; path = ../../../../Downloads/liked.png; sourceTree = "<group>"; };
-		9EB0389E2020C64000109B2A /* unliked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unliked.png; path = ../../../../Downloads/unliked.png; sourceTree = "<group>"; };
 		9EC66F05201F29E40053A03B /* Vistival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vistival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC66F08201F29E40053A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EC66F0A201F29E40053A03B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +122,7 @@
 				5E594BEF201F651300335955 /* DetailFAQViewController.swift */,
 				5E594BF1201F722100335955 /* LineUpViewController.swift */,
 				5E594BF3202079C500335955 /* NewsItemsViewController.swift */,
+				5E7E7509202354CF008C9BC4 /* FAQTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,6 +207,7 @@
 				9EC66F34201F33630053A03B /* FoodStand.swift in Sources */,
 				5E594BF2201F722100335955 /* LineUpViewController.swift in Sources */,
 				9EC66F11201F29E40053A03B /* Vistival.xcdatamodeld in Sources */,
+				5E7E750A202354CF008C9BC4 /* FAQTableViewCell.swift in Sources */,
 				9EC66F26201F2DB20053A03B /* NewsFeed.swift in Sources */,
 				9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */,
 				5E594BF0201F651300335955 /* DetailFAQViewController.swift in Sources */,
