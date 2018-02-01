@@ -305,7 +305,7 @@ public class ImportData{
         
         artist.personal = false;
     }
-}
+
 
 
 //    func version(){
@@ -488,4 +488,5 @@ public class ImportData{
 //
 //    }
 
+}
 
