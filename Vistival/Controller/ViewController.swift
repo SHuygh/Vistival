@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let frame = tableView.frame;
         
         //Image
-        let image = UIImage.init(named: newsItems[indexPath.row].img)
+        let image = UIImage.init(named: currentItem.img)
         
         tableView.rowHeight = frame.width/1.77
         
@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //textlabel
         let textLbl = UILabel.init(frame: CGRect.init(x: 0.03 * frame.width, y: 0.9 * tableView.rowHeight - 30, width: 0.8 * frame.width, height: 30))
         
-        textLbl.text = " \(newsItems[indexPath.row].title) "
+        textLbl.text = " \(currentItem.title) "
         textLbl.textColor = UIColor.black;
         textLbl.backgroundColor = UIColor.white;
         textLbl.font = UIFont.boldSystemFont(ofSize: 18)
@@ -72,7 +72,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  
         
 
-        
         return cell!
     }
     
