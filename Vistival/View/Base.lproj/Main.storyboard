@@ -47,7 +47,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13716340065002441" green="0.34752169251441956" blue="0.31724032759666443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="grR-zq-oE3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="21u-kX-nqJ"/>
                             <constraint firstItem="XG2-Vp-PAT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EYP-HM-grh"/>
