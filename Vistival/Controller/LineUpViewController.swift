@@ -38,6 +38,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        lineup = ImportData.data.artistList;
         filterLineup();
     }
     
@@ -152,12 +153,17 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
                     }
                     totalRow += 1;
                 }
-                lineup[totalRow].personal = !lineup[totalRow].personal
                 
-                if(!lineup[totalRow].personal){
-                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "unliked.png")
+                if(lineup[totalRow].personal){
+                   ImportData.data.deleteArtistInPersonalLineUp(artist: lineup[totalRow])
                 }else{
+                    ImportData.data.saveArtistInPersonalLineUp(artist: lineup[totalRow])
+                }
+                
+                if(lineup[totalRow].personal){
                     artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "liked.png")
+                }else{
+                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "unliked.png")
                 }
             }
     }
