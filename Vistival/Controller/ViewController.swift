@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblImage: UIImageView!
     
+
+    
     let data = ImportData.data
     var newsItems = ImportData.data.newsList
 
@@ -43,7 +45,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         let currentItem:NewsFeed = newsItems[indexPath.row]
         
-        let recognizer = UITapGestureRecognizer.
         
         
 //        cell?.textLabel?.text = newsItems[indexPath.row].title
@@ -53,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         
-        return cell
+        return cell!
     }
     
     
