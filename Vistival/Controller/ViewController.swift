@@ -15,7 +15,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblImage: UIImageView!
     
 
     

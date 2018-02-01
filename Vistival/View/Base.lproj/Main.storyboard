@@ -28,12 +28,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IEh-6B-jSH" id="quo-j6-Hs2">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3g-5z-UlJ">
-                                                    <rect key="frame" x="-17" y="-18" width="375" height="79"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="W71-Qf-P7l" kind="presentation" id="4Cw-yf-a0R"/>
@@ -68,7 +62,6 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="lblImage" destination="G3g-5z-UlJ" id="LDN-Be-PVl"/>
                         <outlet property="tableView" destination="XG2-Vp-PAT" id="dhr-pf-qcC"/>
                     </connections>
                 </viewController>
