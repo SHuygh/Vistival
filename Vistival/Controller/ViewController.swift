@@ -70,7 +70,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell?.addSubview(textLbl)
  
         
-        
 
         
         return cell!

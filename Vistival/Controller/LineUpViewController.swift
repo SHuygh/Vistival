@@ -81,7 +81,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         if(showStage[section]){
             showStageBtn.setImage(UIImage.init(named: "up.png"), for: .normal)
         }else{
-            showStageBtn.setImage(UIImage.init(named: "drop-down.png"), for: .normal)
+            showStageBtn.setImage(UIImage.init(named: "down.png"), for: .normal)
         }
             showStageBtn.addTarget(self, action: #selector(showStageBtnClicked(sender:)), for: .touchUpInside);
         
@@ -114,7 +114,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         if(showStage[btnID]){
             sender.setImage(UIImage.init(named: "up.png"), for: .normal)
         }else{
-            sender.setImage(UIImage.init(named: "drop-down.png"), for: .normal)
+            sender.setImage(UIImage.init(named: "down.png"), for: .normal)
         }
         
         self.filterLineup()
