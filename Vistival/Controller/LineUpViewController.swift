@@ -12,9 +12,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
  
     var lineup = ImportData.data.artistList
     var showID = 0;
-    var testOrigin = "";
     var showStage:[Bool] = [Bool]()
-    var favorites:[Bool] = [Bool]()
     
     @IBOutlet weak var artistview: UITableView!
     
@@ -40,6 +38,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        lineup = ImportData.data.artistList;
         filterLineup();
     }
     
@@ -118,10 +117,10 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
         let stageSelected:String = ImportData.data.stageList[selected.stageID].title!;
         
-        if(!favorites[totalRow]){
-            cell.imageView?.image = UIImage.init(named: "placeholder.jpg")
+        if(!lineup[totalRow].personal){
+            cell.imageView?.image = UIImage.init(named: "unliked.png")
         }else{
-            cell.imageView?.image = UIImage.init(named: "placeholder1.jpg")
+            cell.imageView?.image = UIImage.init(named: "liked.png")
         }
         
         
@@ -134,7 +133,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         //ge moogt die aanklikken
         cell.imageView?.isUserInteractionEnabled = true;
         
-        cell.textLabel?.text = "\(selected.name) \(testOrigin)"
+        cell.textLabel?.text = selected.name
         cell.detailTextLabel?.text = "\(stageSelected)\t\(timeSelected)";
         
         return cell
@@ -154,12 +153,17 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
                     }
                     totalRow += 1;
                 }
-                favorites[totalRow] = !favorites[totalRow]
                 
-                if(!favorites[totalRow]){
-                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "placeholder.jpg")
+                if(lineup[totalRow].personal){
+                   ImportData.data.deleteArtistInPersonalLineUp(artist: lineup[totalRow])
                 }else{
-                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "placeholder1.jpg")
+                    ImportData.data.saveArtistInPersonalLineUp(artist: lineup[totalRow])
+                }
+                
+                if(lineup[totalRow].personal){
+                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "liked.png")
+                }else{
+                    artistview.cellForRow(at: tapIndexPath)?.imageView?.image = UIImage.init(named: "unliked.png")
                 }
             }
     }
@@ -212,12 +216,6 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
             if(!stage){
                 lineup = lineup.filter({$0.stageID != index })
             }
-        }
-        
-        favorites = [Bool]();
-        
-        for artist in lineup{
-            favorites.append(false);
         }
         
         artistview.reloadData();

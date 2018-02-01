@@ -14,8 +14,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var mapView: MKMapView!
     
     
-    let stages = ImportData.data.stageList;
-    let foodstands = ImportData.data.foodCourt;
+    var stages = ImportData.data.stageList;
+    var foodstands = ImportData.data.foodCourt;
     
     var locationManager = CLLocationManager();
     
@@ -34,6 +34,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        stages = ImportData.data.stageList;
+        foodstands = ImportData.data.foodCourt;
+        
+        self.initializeMap();
     }
 
     

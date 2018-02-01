@@ -15,13 +15,17 @@ public class Artist{
     var time:Date;
     var image:String
     var duration: Int;
+    var personal:Bool;
+    var id:Int;
     
-    init(name:String, stageID:Int, time:Date, image:String, duration:Int) {
+    init(name:String, stageID:Int, time:Date, image:String, duration:Int, id: Int) {
         self.name = name;
         self.stageID = stageID;
         self.time = time;
         self.image = image;
         self.duration = duration
+        self.personal = false;
+        self.id = id;
     }
     
     
