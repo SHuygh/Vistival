@@ -44,14 +44,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         let currentItem:NewsFeed = newsItems[indexPath.row]
         
+        let frame = tableView.frame;
+        let image = UIImage.init(named: newsItems[indexPath.row].img)
+        
+        tableView.rowHeight = frame.width/1.77
+        
+        let imageview = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: tableView.rowHeight))
+        imageview.image = image;
+        imageview.contentMode = .scaleAspectFill
+        
+        cell?.addSubview(imageview);
         
         
 //        cell?.textLabel?.text = newsItems[indexPath.row].title
-        
-//        cell?.imageView?.image = UIImage.init(named: newsItems[indexPath.row].img)
-        
-        
-        
+
         
         return cell!
     }
