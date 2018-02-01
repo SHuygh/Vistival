@@ -59,12 +59,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell?.addSubview(imageview);
         
         //textlabel
-        let textLbl = UILabel.init(frame: CGRect.init(x: 0.1 * frame.width, y: 0.9 * tableView.rowHeight - 30, width: 0.8 * frame.width, height: 30))
+        let textLbl = UILabel.init(frame: CGRect.init(x: 0.03 * frame.width, y: 0.9 * tableView.rowHeight - 30, width: 0.8 * frame.width, height: 30))
         
         textLbl.text = " \(newsItems[indexPath.row].title) "
-        textLbl.textColor = UIColor.white;
-        textLbl.backgroundColor = UIColor.darkGray;
-        textLbl.font = UIFont.init(name: textLbl.font.fontName, size: 18)
+        textLbl.textColor = UIColor.black;
+        textLbl.backgroundColor = UIColor.white;
+        textLbl.font = UIFont.boldSystemFont(ofSize: 18)
+        
         textLbl.sizeToFit()
         
         cell?.addSubview(textLbl)
