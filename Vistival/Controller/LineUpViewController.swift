@@ -33,9 +33,13 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         for _ in ImportData.data.stageList{
             showStage.append(true)
         }
-        btnZaterdag.backgroundColor = UIColor.darkGray;
-        btnZondag.backgroundColor = UIColor.darkGray;
-        btnZaZo.backgroundColor = UIColor.lightGray
+        btnZaterdag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZaterdag.titleLabel?.textColor = UIColor.white
+        btnZondag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZondag.titleLabel?.textColor = UIColor.white
+        btnZaZo.backgroundColor = UIColor.white
+        btnZaZo.titleLabel?.textColor = UIColor.black
+        //button.titleLabel.textColor
         btnPersonal.setImage(UIImage.init(named: "unliked.png"), for: .normal)
         
         filterLineup();
@@ -48,17 +52,26 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         if(showID == 0){
-        btnZaterdag.backgroundColor = UIColor.darkGray;
-        btnZondag.backgroundColor = UIColor.darkGray;
-            btnZaZo.backgroundColor = UIColor.lightGray;
+        btnZaterdag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+            btnZaterdag.titleLabel?.textColor = UIColor.white
+        btnZondag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+            btnZondag.titleLabel?.textColor = UIColor.white
+            btnZaZo.backgroundColor = UIColor.white
+            btnZaZo.titleLabel?.textColor = UIColor.black;
         }else if (showID == 1){
-            btnZaterdag.backgroundColor = UIColor.lightGray;
-            btnZondag.backgroundColor = UIColor.darkGray;
-            btnZaZo.backgroundColor = UIColor.darkGray;
+            btnZaterdag.backgroundColor = UIColor.white;
+            btnZaterdag.titleLabel?.textColor = UIColor.black;
+            btnZondag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+            btnZondag.titleLabel?.textColor = UIColor.white
+            btnZaZo.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+            btnZaZo.titleLabel?.textColor = UIColor.white
         }else{
-            btnZaterdag.backgroundColor = UIColor.darkGray;
-            btnZondag.backgroundColor = UIColor.lightGray;
-            btnZaZo.backgroundColor = UIColor.darkGray
+            btnZaterdag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+            btnZaterdag.titleLabel?.textColor = UIColor.white
+            btnZondag.backgroundColor = UIColor.white;
+            btnZondag.titleLabel?.textColor = UIColor.black;
+            btnZaZo.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0)
+            btnZaZo.titleLabel?.textColor = UIColor.white
         }
         lineup = ImportData.data.artistList;
         filterLineup();
@@ -112,7 +125,7 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
         
             header.isUserInteractionEnabled = true;
         
-        header.backgroundColor = #colorLiteral(red: 0.1371634007, green: 0.3475216925, blue: 0.3172403276, alpha: 1);
+        header.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
         
         return header;
 
@@ -207,10 +220,14 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBAction func zaterdagPressed() {
 
-       
-            btnZaterdag.backgroundColor = UIColor.lightGray;
-            btnZondag.backgroundColor = UIColor.darkGray;
-            btnZaZo.backgroundColor = UIColor.darkGray;
+        btnZaterdag.titleLabel?.textColor = UIColor.black;
+        btnZaterdag.backgroundColor = UIColor.white;
+        btnZaterdag.titleLabel?.textColor = UIColor.black;
+        btnZondag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZondag.titleLabel?.textColor = UIColor.white
+        btnZaZo.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZaZo.titleLabel?.textColor = UIColor.white
+
             showID = 1;
  
         
@@ -219,9 +236,15 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func zondagPressed() {
 
-            btnZaterdag.backgroundColor = UIColor.darkGray;
-            btnZondag.backgroundColor = UIColor.lightGray;
-            btnZaZo.backgroundColor = UIColor.darkGray;
+        btnZaterdag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZondag.titleLabel?.textColor = UIColor.white
+
+        btnZondag.backgroundColor = UIColor.white;
+        btnZondag.titleLabel?.textColor = UIColor.black;
+        
+        btnZaZo.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZaZo.titleLabel?.textColor = UIColor.white
+
             showID = 2;
 
         self.filterLineup()
@@ -229,9 +252,14 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     @IBAction func zazopressed() {
-        btnZaterdag.backgroundColor = UIColor.darkGray;
-        btnZondag.backgroundColor = UIColor.darkGray;
-        btnZaZo.backgroundColor = UIColor.lightGray;
+        btnZaterdag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZaterdag.titleLabel?.textColor = UIColor.white
+
+        btnZondag.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0);
+        btnZondag.titleLabel?.textColor = UIColor.white
+
+        btnZaZo.backgroundColor = UIColor.white
+        btnZaZo.titleLabel?.textColor = UIColor.black
         showID = 0
         self.filterLineup();
     }

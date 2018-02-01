@@ -46,6 +46,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let frame = tableView.frame;
         
+        
+        
         //Image
         let image = UIImage.init(named: currentItem.img)
         
@@ -62,15 +64,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let textLbl = UILabel.init(frame: CGRect.init(x: 0.03 * frame.width, y: 0.9 * tableView.rowHeight - 30, width: 0.8 * frame.width, height: 30))
         
         textLbl.text = " \(currentItem.title) "
-        textLbl.textColor = UIColor.black;
-        textLbl.backgroundColor = UIColor.white;
+        textLbl.textColor = UIColor.white;
+        textLbl.backgroundColor = UIColor(red:0.09, green:0.37, blue:0.49, alpha:1.0)
         textLbl.font = UIFont.boldSystemFont(ofSize: 18)
         
         textLbl.sizeToFit()
         
         cell?.addSubview(textLbl)
- 
         
+        cell?.selectionStyle = .none        
 
         return cell!
     }
