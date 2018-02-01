@@ -88,19 +88,6 @@
                                             <action selector="dismiss" destination="W71-Qf-P7l" eventType="touchUpInside" id="rq0-nU-Szk"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-0p-JPH">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="205"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UoA-hH-pTi">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="205"/>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="UoA-hH-pTi" firstAttribute="top" secondItem="MCT-0p-JPH" secondAttribute="top" id="MYt-9H-EzL"/>
-                                            <constraint firstAttribute="trailing" secondItem="UoA-hH-pTi" secondAttribute="trailing" id="k1A-A4-QcA"/>
-                                            <constraint firstItem="UoA-hH-pTi" firstAttribute="leading" secondItem="MCT-0p-JPH" secondAttribute="leading" id="qV5-US-eoI"/>
-                                        </constraints>
-                                    </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YtZ-5k-I27">
                                         <rect key="frame" x="15" y="224" width="312" height="328"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,16 +98,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoA-hH-pTi">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="205"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MCT-0p-JPH" firstAttribute="leading" secondItem="JyK-yp-ugQ" secondAttribute="leading" id="2ZK-5Y-6Gu"/>
-                                    <constraint firstItem="MCT-0p-JPH" firstAttribute="top" secondItem="JyK-yp-ugQ" secondAttribute="top" id="4FO-Q1-bS5"/>
+                                    <constraint firstAttribute="trailing" secondItem="UoA-hH-pTi" secondAttribute="trailing" id="1ID-Ib-wLm"/>
                                     <constraint firstAttribute="bottom" secondItem="YtZ-5k-I27" secondAttribute="bottom" constant="15" id="NPI-2d-t70"/>
-                                    <constraint firstItem="YtZ-5k-I27" firstAttribute="top" secondItem="MCT-0p-JPH" secondAttribute="bottom" constant="19" id="QZV-kB-vT1"/>
+                                    <constraint firstItem="UoA-hH-pTi" firstAttribute="top" secondItem="JyK-yp-ugQ" secondAttribute="top" id="dWt-dl-iSB"/>
                                     <constraint firstAttribute="trailing" secondItem="YtZ-5k-I27" secondAttribute="trailing" constant="16" id="jo9-wN-gD7"/>
+                                    <constraint firstItem="UoA-hH-pTi" firstAttribute="leading" secondItem="JyK-yp-ugQ" secondAttribute="leading" id="lwI-by-32v"/>
                                     <constraint firstItem="YtZ-5k-I27" firstAttribute="leading" secondItem="JyK-yp-ugQ" secondAttribute="leading" constant="15" id="oNb-Y9-Axe"/>
-                                    <constraint firstItem="YtZ-5k-I27" firstAttribute="centerX" secondItem="MCT-0p-JPH" secondAttribute="centerX" id="zWZ-N0-3Wp"/>
                                 </constraints>
                             </view>
                         </subviews>
