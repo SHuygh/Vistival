@@ -193,32 +193,36 @@ class LineUpViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBAction func zaterdagPressed() {
 
-        if(showID != 1){
+       
             btnZaterdag.backgroundColor = UIColor.lightGray;
             btnZondag.backgroundColor = UIColor.darkGray;
             showID = 1;
-        }else{
-            btnZaterdag.backgroundColor = UIColor.lightGray;
-            btnZondag.backgroundColor = UIColor.lightGray;
-            showID = 0
-        }
+ 
         
         self.filterLineup()
     }
     
     @IBAction func zondagPressed() {
-        if(showID != 2){
+
             btnZaterdag.backgroundColor = UIColor.darkGray;
             btnZondag.backgroundColor = UIColor.lightGray;
             showID = 2;
-        }else{
-            btnZaterdag.backgroundColor = UIColor.lightGray;
-            btnZondag.backgroundColor = UIColor.lightGray;
-            showID = 0
-        }
+
         self.filterLineup()
     }
     
+    
+    @IBAction func zazopressed() {
+        btnZaterdag.backgroundColor = UIColor.lightGray;
+        btnZondag.backgroundColor = UIColor.lightGray;
+        showID = 0
+        self.filterLineup();
+    }
+    
+    @IBAction func personalPressed() {
+    }
+    
+
     func filterLineup(){
         lineup = ImportData.data.artistList;
         lineup.sort(by: {
