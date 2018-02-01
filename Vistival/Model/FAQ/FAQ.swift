@@ -8,14 +8,18 @@
 
 import Foundation
 
-public class FAQ{
+
+struct FAQ{
     
     var title:String;
-    var body:String;
+    var body:[String]!
+    var expanded: Bool!
+
     
-    init(title:String, body:String) {
+    init(title:String, body:[String], expanded: Bool) {
         self.title = title;
         self.body = body;
+        self.expanded = expanded;
     }
     
 }

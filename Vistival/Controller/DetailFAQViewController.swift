@@ -17,9 +17,9 @@ class DetailFAQViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        lblDetailTxt.text = currentItem?.title
-        lblDetailTxt.text = currentItem?.body
+//        // Do any additional setup after loading the view.
+//        lblDetailTxt.text = currentItem?.title
+//        lblDetailTxt.text = currentItem?.body
 
 
     }

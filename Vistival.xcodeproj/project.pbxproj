@@ -12,6 +12,7 @@
 		5E594BF2201F722100335955 /* LineUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF1201F722100335955 /* LineUpViewController.swift */; };
 		5E594BF4202079C500335955 /* NewsItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E594BF3202079C500335955 /* NewsItemsViewController.swift */; };
 		5E7E750A202354CF008C9BC4 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E7509202354CF008C9BC4 /* FAQTableViewCell.swift */; };
+		5E7E750D2023B45D008C9BC4 /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E750C2023B45D008C9BC4 /* ExpandableHeaderView.swift */; };
 		5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA872C3201F490D0046F5DA /* MapViewController.swift */; };
 		9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F08201F29E40053A03B /* AppDelegate.swift */; };
 		9EC66F0B201F29E40053A03B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC66F0A201F29E40053A03B /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		5E594BF1201F722100335955 /* LineUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpViewController.swift; sourceTree = "<group>"; };
 		5E594BF3202079C500335955 /* NewsItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemsViewController.swift; sourceTree = "<group>"; };
 		5E7E7509202354CF008C9BC4 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		5E7E750C2023B45D008C9BC4 /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		5EA872C3201F490D0046F5DA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9EC66F05201F29E40053A03B /* Vistival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vistival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC66F08201F29E40053A03B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E7E750B2023B3D9008C9BC4 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				9EC66F21201F2CAD0053A03B /* FAQ.swift */,
+				5E7E750C2023B45D008C9BC4 /* ExpandableHeaderView.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		9EC66EFC201F29E40053A03B = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				9EC66F0F201F29E40053A03B /* Vistival.xcdatamodeld */,
-				9EC66F21201F2CAD0053A03B /* FAQ.swift */,
+				5E7E750B2023B3D9008C9BC4 /* FAQ */,
 				9EC66F25201F2DB20053A03B /* NewsFeed.swift */,
 				9EC66F27201F2DBE0053A03B /* Artist.swift */,
 				9EC66F2B201F2DF80053A03B /* Stage.swift */,
@@ -212,6 +223,7 @@
 				9EC66F09201F29E40053A03B /* AppDelegate.swift in Sources */,
 				5E594BF0201F651300335955 /* DetailFAQViewController.swift in Sources */,
 				5E594BEE201F585200335955 /* InfoViewController.swift in Sources */,
+				5E7E750D2023B45D008C9BC4 /* ExpandableHeaderView.swift in Sources */,
 				5E594BF4202079C500335955 /* NewsItemsViewController.swift in Sources */,
 				5EA872C4201F490D0046F5DA /* MapViewController.swift in Sources */,
 			);
