@@ -26,7 +26,10 @@ class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        faqItems = ImportData.data.faqList;
+        tableview.reloadData();
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return faqItems.count
