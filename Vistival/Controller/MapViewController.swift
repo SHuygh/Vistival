@@ -167,9 +167,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     
     @objc func goToTimetable(sender: UIButton){
-
-
-        let lineUpVC = tabBarController?.childViewControllers[1] as! LineUpViewController;
+        
+        
+        let nav = tabBarController?.childViewControllers[1] as! UINavigationController
+        let lineUpVC = nav.visibleViewController as! LineUpViewController;
+        
+        
         
         var tmpShowStage = [Bool]()
         

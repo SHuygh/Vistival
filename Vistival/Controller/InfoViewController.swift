@@ -12,25 +12,18 @@ class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 
     @IBOutlet weak var tableview: UITableView!
-//    var faqItems = ImportData.data.faqList
+    var faq = ImportData.data.faqList
     
-    var faqItems = [
-        FAQ(title: "Mag ik zelf drinken meebrengen?",
-            body: ["Neen, er zijn foodstands aanwezig op het terein."],
-            expanded: false),
-        FAQ(title: "Waar is Vistival?",
-            body: ["Havengeul, 8620, Nieuwpoort"],
-            expanded: false),
-        FAQ(title: "Is het Vistival betalend?",
-            body: ["Neen, de toegang is gratis."],
-            expanded: false)
-    ]
+    var faqExpanded:[Bool] = [Bool]()
     
-    
+    var cellHeight = CGFloat();
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for _ in faq{
+            var boolean = false
+            faqExpanded.append(boolean)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -40,42 +33,47 @@ class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        faqItems = ImportData.data.faqList;
-//        tableview.reloadData();
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        faq = ImportData.data.faqList;
+
+        tableview.reloadData();
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return faqItems.count
+        return faq.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return faqItems[section].body.count
+        return 1;
     }
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"cell")
-//        let currentItem:FAQ = faqItems[indexPath.row]
-
-//        cell?.textLabel?.text = currentItem.title
-        cell?.textLabel?.text = faqItems[indexPath.section].body[indexPath.row]
-        let frame = tableView.frame;
-
-        let textLbl = UILabel.init(frame: CGRect.init(x: 0.03 * frame.width, y: 0.9 * tableView.rowHeight, width: 0.8 * frame.width, height: 30))
+        let frame = tableview.frame;
         
-        textLbl.sizeToFit()
+        let textview = UITextView.init(frame: CGRect.init(x: 0.05 * frame.size.width, y: 0, width: 0.9 * frame.size.width, height: 200), textContainer: nil)
+        textview.text = faq[indexPath.section].body;
+        
+        textview.font = UIFont.init(name: (textview.font?.fontName)!, size: 16)
+        
+        textview.translatesAutoresizingMaskIntoConstraints = true
+        textview.sizeToFit()
+        textview.isScrollEnabled = false
+        cellHeight = textview.contentSize.height;
 
+        cell?.addSubview(textview)
         return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (faqItems[indexPath.section].expanded) {
-            return 44
+        if (faqExpanded[indexPath.section]) {
+            return cellHeight
         } else {
             return 0
         }
@@ -87,35 +85,22 @@ class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ExpandableHeaderView()
-        header.customInit(title: faqItems[section].title, section: section, delegate: self as ExpandableHeaderViewDelegate)
+        header.customInit(title: faq[section].title, section: section, delegate: self as ExpandableHeaderViewDelegate)
         return header
     }
     
     func toggleSection(header: ExpandableHeaderView, section: Int) {
-        faqItems[section].expanded = !faqItems[section].expanded
         
-        tableview.beginUpdates()
-
-        for i in 0 ..< faqItems[section].body.count {
-            tableview.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
+        for (index, expanded) in faqExpanded.enumerated(){
+            if (index != section){
+            faqExpanded[index] = false
+            }else{
+             faqExpanded[section] = !faqExpanded[section]
+            }
         }
-        tableview.endUpdates()
+        
+
+        tableview.reloadData();
     }
 
-    
-
-    
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    let destination:DetailFAQViewController = segue.destination as! DetailFAQViewController
-//
-//        let indexpath = tableview.indexPath(for: sender as! UITableViewCell)
-//
-//        let toPass:FAQ = faqItems[indexpath!.row]
-//
-//    destination.currentItem = toPass
-//
-//}
 }

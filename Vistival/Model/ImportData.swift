@@ -37,6 +37,7 @@ public class ImportData{
     }
     
     func fillAllData(){
+        //with RESTful
  //       self.news();
         
         //version control should be added once core data is introduced for all classes
@@ -46,7 +47,8 @@ public class ImportData{
 //        self.accessRESTful(request: requestFAQ)
 //        self.accessRESTful(request: requestFoodstands)
         
-//        self.makeFAQ();
+        //Without RESTful
+        self.makeFAQ();
         self.makeNewsList();
         self.makeFoodCourt();
         self.makeStageList();
@@ -96,9 +98,9 @@ public class ImportData{
                     print(self.requestVersion)
                     self.compareVersions(jsonArray: jsonArray)
                 
-//                 case self.requestFAQ:
-//                    print(self.requestFAQ)
-//                    self.generateFAQ(jsonArray: jsonArray)
+                 case self.requestFAQ:
+                    print(self.requestFAQ)
+                    self.generateFAQ(jsonArray: jsonArray)
                 
                 case self.requestStages:
                     print(self.requestStages)
@@ -137,15 +139,15 @@ public class ImportData{
         }
     }
     
-//    func generateFAQ(jsonArray: [NSObject]){
-//        for jsonObject in jsonArray{
-//            let title = jsonObject.value(forKey: "title") as! String
-//            let body = jsonObject.value(forKey: "body") as! String;
-//
-//            let faq = FAQ.init(title: title, body: body, expanded: false)
-//            faqList.append(faq);
-//        }
-//    }
+    func generateFAQ(jsonArray: [NSObject]){
+        for jsonObject in jsonArray{
+            let title = jsonObject.value(forKey: "title") as! String
+            let body = jsonObject.value(forKey: "body") as! String;
+
+            let faq = FAQ.init(title: title, body: body)
+            faqList.append(faq);
+        }
+    }
     
     func generateStages(jsonArray: [NSObject]){
         for jsonObject in jsonArray{
@@ -309,45 +311,7 @@ public class ImportData{
 
 
 
-//    func version(){
-//        //based on http://matteomanferdini.com/network-requests-rest-apis-ios-swift/
-//        let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: OperationQueue.main)
-//        let url = URL(string: "http://192.168.0.127:8080/Vistival/webresources/huygh.stijn.vistivalversion/1")!
-//        let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-//            guard let data = data else {
-//                return
-//            }
-//            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) as! NSObject else {
-//                return
-//            }
-//            print("id")
-//            print(jsonObject.value(forKey: "id"))
-//            print("idArtist")
-//            print(jsonObject.value(forKey: "idArtist"))
-//            print("idFAQ")
-//            print(jsonObject.value(forKey: "idFAQ"))
-//            print("idFoodStand")
-//            print(jsonObject.value(forKey: "idFoodstand"))
-//            print("idStage")
-//            print(jsonObject.value(forKey: "idStage"))
-//        })
-//        task.resume()
-//
-//    }
 
-//                case self.requestNews:
-//                    print(self.requestNews)
-//                    for jsonObject  in jsonArray{
-//                        let title = jsonObject.value(forKey: "title") as! String;
-//                        let body = jsonObject.value(forKey: "body") as! String;
-//                        let id = jsonObject.value(forKey: "id") as! Int;
-//                        let img = jsonObject.value(forKey: "img") as! String;
-//
-//                        let newsItem:NewsFeed = NewsFeed.init(title: title, body: body, id: id, img: img);
-//                        print(newsItem.title)
-//                        self.newsList.append(newsItem);
-//
-//                    }
 
     func makeArtistList(){
         var time:Date;
@@ -423,21 +387,21 @@ public class ImportData{
 
     }
 
-//    func makeFAQ(){
-//
-//        let faq1 = FAQ.init(title: "Mag ik zelf drinken meebrengen?", body: "Neen, er zijn foodstands aanwezig op het terein.", expanded: false)
-//        let faq2 = FAQ.init(title: "Waar is Vistival?", body: "Havengeul, 8620, Nieuwpoort", expanded: false)
-//        let faq3 = FAQ.init(title: "Is het Vistival betalend?", body: "Neen, de toegang is gratis.", expanded: false)
-//        let faq4 = FAQ.init(title: "Wanneer vindt het festival plaats?", body: "07/08/2018 - 08/08/2018", expanded: false)
-//        let faq5 = FAQ.init(title: "Lorem Ipsum", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel mi malesuada, suscipit lacus vel, finibus nibh. Suspendisse faucibus vehicula facilisis. Morbi sagittis felis vel convallis scelerisque. Proin id auctor nibh, sed iaculis dui. Etiam malesuada urna diam, ac pretium ex varius at. Cras commodo sem eget tellus feugiat, vitae semper libero malesuada. Donec molestie et nisl non pulvinar. Suspendisse pellentesque, mi vel hendrerit bibendum, libero erat placerat dolor, sit amet porttitor enim felis sit amet leo. Integer a elit lectus. Integer eget quam facilisis, efficitur justo viverra, dignissim leo.\n Suspendisse nibh orci, ultrices a turpis quis, auctor sodales ligula. Ut rhoncus ligula eget condimentum vehicula. Integer varius, felis a congue finibus, ex est interdum velit, ut blandit sem neque sed metus. Aliquam viverra ipsum nec dolor finibus, ac tincidunt nunc ultrices. Nam sit amet risus dolor. Suspendisse ac rhoncus orci. Etiam feugiat eu diam feugiat bibendum. Morbi ligula est, aliquet vel euismod quis, malesuada sed enim. Integer at ullamcorper orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vestibulum urna id porttitor aliquam. Nam euismod eget ligula eu porta.", expanded: false)
-//
-//        faqList.append(faq1);
-//        faqList.append(faq2);
-//        faqList.append(faq3);
-//        faqList.append(faq4);
-//        faqList.append(faq5);
-//
-//    }
+    func makeFAQ(){
+
+        let faq1 = FAQ.init(title: "Mag ik zelf drinken meebrengen?", body: "Neen, er zijn foodstands aanwezig op het terein.")
+        let faq2 = FAQ.init(title: "Waar is Vistival?", body: "Havengeul, 8620, Nieuwpoort")
+        let faq3 = FAQ.init(title: "Is het Vistival betalend?", body: "Neen, de toegang is gratis.")
+        let faq4 = FAQ.init(title: "Wanneer vindt het festival plaats?", body: "07/08/2018 - 08/08/2018")
+        let faq5 = FAQ.init(title: "Lorem Ipsum", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel mi malesuada, suscipit lacus vel, finibus nibh. Suspendisse faucibus vehicula facilisis. Morbi sagittis felis vel convallis scelerisque. Proin id auctor nibh, sed iaculis dui. Etiam malesuada urna diam, ac pretium ex varius at. Cras commodo sem eget tellus feugiat, vitae semper libero malesuada. Donec molestie et nisl non pulvinar. Suspendisse pellentesque, mi vel hendrerit bibendum, libero erat placerat dolor, sit amet porttitor enim felis sit amet leo. Integer a elit lectus. Integer eget quam facilisis, efficitur justo viverra, dignissim leo.\n Suspendisse nibh orci, ultrices a turpis quis, auctor sodales ligula. Ut rhoncus ligula eget condimentum vehicula. Integer varius, felis a congue finibus, ex est interdum velit, ut blandit sem neque sed metus. Aliquam viverra ipsum nec dolor finibus, ac tincidunt nunc ultrices. Nam sit amet risus dolor. Suspendisse ac rhoncus orci. Etiam feugiat eu diam feugiat bibendum. Morbi ligula est, aliquet vel euismod quis, malesuada sed enim. Integer at ullamcorper orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec vestibulum urna id porttitor aliquam. Nam euismod eget ligula eu porta.")
+
+        faqList.append(faq1);
+        faqList.append(faq2);
+        faqList.append(faq3);
+        faqList.append(faq4);
+        faqList.append(faq5);
+
+    }
 
     func makeNewsList(){
         let news1 = NewsFeed.init(title: "Vistival date announced", body: "Vistival gaat door van 07/08/2018 - 08/08/2018 te Havengeul, 8620, Nieuwpoort", id: 0, img:"placeholder.jpg")
@@ -488,6 +452,46 @@ public class ImportData{
         foodCourt.append(foodstand6)
 
     }
+    
+    //    func version(){
+    //        //based on http://matteomanferdini.com/network-requests-rest-apis-ios-swift/
+    //        let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: OperationQueue.main)
+    //        let url = URL(string: "http://192.168.0.127:8080/Vistival/webresources/huygh.stijn.vistivalversion/1")!
+    //        let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+    //            guard let data = data else {
+    //                return
+    //            }
+    //            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) as! NSObject else {
+    //                return
+    //            }
+    //            print("id")
+    //            print(jsonObject.value(forKey: "id"))
+    //            print("idArtist")
+    //            print(jsonObject.value(forKey: "idArtist"))
+    //            print("idFAQ")
+    //            print(jsonObject.value(forKey: "idFAQ"))
+    //            print("idFoodStand")
+    //            print(jsonObject.value(forKey: "idFoodstand"))
+    //            print("idStage")
+    //            print(jsonObject.value(forKey: "idStage"))
+    //        })
+    //        task.resume()
+    //
+    //    }
+    
+    //                case self.requestNews:
+    //                    print(self.requestNews)
+    //                    for jsonObject  in jsonArray{
+    //                        let title = jsonObject.value(forKey: "title") as! String;
+    //                        let body = jsonObject.value(forKey: "body") as! String;
+    //                        let id = jsonObject.value(forKey: "id") as! Int;
+    //                        let img = jsonObject.value(forKey: "img") as! String;
+    //
+    //                        let newsItem:NewsFeed = NewsFeed.init(title: title, body: body, id: id, img: img);
+    //                        print(newsItem.title)
+    //                        self.newsList.append(newsItem);
+    //
+    //                    }
 
 }
 

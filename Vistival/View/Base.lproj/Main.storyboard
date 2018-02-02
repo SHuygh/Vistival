@@ -513,6 +513,7 @@
         <!--Navigation Controller-->
         <scene sceneID="qFv-6N-aWL">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewY-Oo-eMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jxK-F0-fxD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icons8-guitar-50 (1)" landscapeImage="icons8-guitar-50 (1)" largeContentSizeImage="icons8-guitar-50 (1)" selectedImage="icons8-guitar-filled-50" id="fhf-Pu-g2m">
                         <color key="badgeColor" red="0.14521399139999999" green="0.35174739360000001" blue="0.45602583889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -531,7 +532,6 @@
                         <segue destination="cJ7-nd-Oh5" kind="relationship" relationship="rootViewController" id="fFM-Eq-L7h"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ewY-Oo-eMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="676.79999999999995" y="538.83058470764627"/>
         </scene>

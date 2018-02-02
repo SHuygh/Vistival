@@ -12,14 +12,13 @@ import Foundation
 struct FAQ{
     
     var title:String;
-    var body:[String]!
-    var expanded: Bool!
+    var body:String
 
     
-    init(title:String, body:[String], expanded: Bool) {
+    init(title:String, body:String) {
         self.title = title;
         self.body = body;
-        self.expanded = expanded;
+        
     }
     
 }
