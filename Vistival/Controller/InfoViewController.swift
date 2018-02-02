@@ -61,6 +61,12 @@ class InfoViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 //        cell?.textLabel?.text = currentItem.title
         cell?.textLabel?.text = faqItems[indexPath.section].body[indexPath.row]
+        let frame = tableView.frame;
+
+        let textLbl = UILabel.init(frame: CGRect.init(x: 0.03 * frame.width, y: 0.9 * tableView.rowHeight, width: 0.8 * frame.width, height: 30))
+        
+        textLbl.sizeToFit()
+
         return cell!
     }
     
