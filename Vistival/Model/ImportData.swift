@@ -452,46 +452,6 @@ public class ImportData{
         foodCourt.append(foodstand6)
 
     }
-    
-    //    func version(){
-    //        //based on http://matteomanferdini.com/network-requests-rest-apis-ios-swift/
-    //        let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: OperationQueue.main)
-    //        let url = URL(string: "http://192.168.0.127:8080/Vistival/webresources/huygh.stijn.vistivalversion/1")!
-    //        let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-    //            guard let data = data else {
-    //                return
-    //            }
-    //            guard let jsonObject = try? JSONSerialization.jsonObject(with: data) as! NSObject else {
-    //                return
-    //            }
-    //            print("id")
-    //            print(jsonObject.value(forKey: "id"))
-    //            print("idArtist")
-    //            print(jsonObject.value(forKey: "idArtist"))
-    //            print("idFAQ")
-    //            print(jsonObject.value(forKey: "idFAQ"))
-    //            print("idFoodStand")
-    //            print(jsonObject.value(forKey: "idFoodstand"))
-    //            print("idStage")
-    //            print(jsonObject.value(forKey: "idStage"))
-    //        })
-    //        task.resume()
-    //
-    //    }
-    
-    //                case self.requestNews:
-    //                    print(self.requestNews)
-    //                    for jsonObject  in jsonArray{
-    //                        let title = jsonObject.value(forKey: "title") as! String;
-    //                        let body = jsonObject.value(forKey: "body") as! String;
-    //                        let id = jsonObject.value(forKey: "id") as! Int;
-    //                        let img = jsonObject.value(forKey: "img") as! String;
-    //
-    //                        let newsItem:NewsFeed = NewsFeed.init(title: title, body: body, id: id, img: img);
-    //                        print(newsItem.title)
-    //                        self.newsList.append(newsItem);
-    //
-    //                    }
 
 }
 

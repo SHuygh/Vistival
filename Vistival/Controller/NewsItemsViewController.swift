@@ -19,7 +19,6 @@ class NewsItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         lblTitle.text = currentItem?.title
         lblDetailTxt.text = currentItem?.body
         lblImage.image = UIImage.init(named: (currentItem?.img)!)
